@@ -2,6 +2,8 @@
 
 Random notes for self
 
+Go to "eddielou.github.io" to see this website
+
 ## Creating the AngularJS project and new pages
 
 - Start angular project with one page of simple static text to be displayed
@@ -9,9 +11,9 @@ Random notes for self
 - Fill "About me" page with linkedin, ig, tiktok, high level resume, whatever
 - Add constants map for reused strings etc
 
-# Ranking app
+## Ranking app
 
-## MVP
+### MVP
 Initial input
 - Text box for adding new items
 - List with the ability to remove items or reset all
@@ -21,7 +23,7 @@ Ranking
 Results
 - Display ranked list with the option to to start over
 
-## Future improvements
+### Future improvements
 - Search artists from Spotify
 - Import top artists from Spotify
 - Search movies from IMDB

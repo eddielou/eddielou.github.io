@@ -28,3 +28,4 @@ Results
 - Import top artists from Spotify
 - Search movies from IMDB
 - Display ranked list as an auto-generated tier list
+

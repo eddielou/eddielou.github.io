@@ -1,31 +1,26 @@
 # eddielou.github.io
 
-Random notes for self
+Personal site built with [React](https://react.dev/) + [Vite](https://vite.dev/).
+Displays "Eddie Lou" centered on the page; the name glows on hover/focus.
 
-Go to "eddielou.github.io" to see this website
+## Develop
 
-## Creating the AngularJS project and new pages
+```bash
+npm install
+npm run dev
+```
 
-- Start angular project with one page of simple static text to be displayed
-- Add an additional page component for "About me" and add link to homepage
-- Fill "About me" page with linkedin, ig, tiktok, high level resume, whatever
-- Add constants map for reused strings etc
+## Build
 
-## Ranking app
+```bash
+npm run build      # outputs to dist/
+npm run preview    # serve the production build locally
+```
 
-### MVP
-Initial input
-- Text box for adding new items
-- List with the ability to remove items or reset all
-Ranking
-- User is presented Option 1 vs Option 2 choices, where they will choose the better one
-- via merge sort, rank the list in its entirety
-Results
-- Display ranked list with the option to to start over
+## Deploy
 
-### Future improvements
-- Search artists from Spotify
-- Import top artists from Spotify
-- Search movies from IMDB
-- Display ranked list as an auto-generated tier list
+Pushes to `main` are built and published to GitHub Pages by
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
 
+One-time setup: in the repo's **Settings → Pages**, set **Source** to
+**GitHub Actions**.

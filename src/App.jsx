@@ -1,99 +1,194 @@
-import { useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import './App.css'
-import { profile, experience, education, skills } from './resume.js'
+import {
+  beginLogin,
+  completeLoginIfRedirected,
+  isConfigured,
+  isLoggedIn,
+  logout,
+} from './spotify/auth'
+import { AuthExpiredError, getAudioFeatures, getTopArtists, getTopTracks } from './spotify/api'
+import { buildPersonality } from './lib/personality'
+import TrackList from './components/TrackList'
+import PersonalityCard from './components/PersonalityCard'
+import GenreBreakdown from './components/GenreBreakdown'
+import MoodGraph from './components/MoodGraph'
 
-function ExperienceItem({ job, defaultOpen }) {
-  const [open, setOpen] = useState(defaultOpen)
-
-  return (
-    <div className={`job ${open ? 'is-open' : ''}`}>
-      <button
-        type="button"
-        className="job-header"
-        aria-expanded={open}
-        onClick={() => setOpen((v) => !v)}
-      >
-        <span className="job-chevron" aria-hidden="true">
-          ▸
-        </span>
-        <span className="job-heading">
-          <span className="job-title">
-            {job.company} <span className="job-sep">/</span> {job.role}
-          </span>
-          <span className="job-meta">
-            {job.dates} · {job.location}
-          </span>
-        </span>
-      </button>
-      <div className="job-body" hidden={!open}>
-        <ul>
-          {job.bullets.map((b, i) => (
-            <li key={i}>{b}</li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  )
-}
+const TIME_RANGES = [
+  { value: 'short_term', label: 'Last 4 weeks' },
+  { value: 'medium_term', label: 'Last 6 months' },
+  { value: 'long_term', label: 'All time' },
+]
 
 function App() {
+  const [authState, setAuthState] = useState('checking') // checking | signedOut | signedIn
+  const [timeRange, setTimeRange] = useState('short_term')
+  const [data, setData] = useState(null) // { tracks, artists, audioFeatures, personality }
+  const [loadError, setLoadError] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const [sharing, setSharing] = useState(false)
+  const cardRef = useRef(null)
+
+  useEffect(() => {
+    completeLoginIfRedirected().then((result) => {
+      if (result.status === 'error') {
+        setLoadError('Spotify sign-in failed. Please try again.')
+      }
+      setAuthState(isLoggedIn() ? 'signedIn' : 'signedOut')
+    })
+  }, [])
+
+  const loadData = useCallback(async (range) => {
+    setLoading(true)
+    setLoadError(null)
+    try {
+      const [tracks, artists] = await Promise.all([
+        getTopTracks(range, 15),
+        getTopArtists(range, 30),
+      ])
+      const audioFeatures = await getAudioFeatures(tracks.map((t) => t.id))
+      const personality = buildPersonality({ tracks, artists, audioFeatures })
+      setData({ tracks, artists, audioFeatures, personality })
+    } catch (err) {
+      if (err instanceof AuthExpiredError) {
+        logout()
+        setAuthState('signedOut')
+        setData(null)
+      } else {
+        setLoadError('Could not load your Spotify data. Please try again.')
+      }
+    } finally {
+      setLoading(false)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (authState === 'signedIn') loadData(timeRange)
+  }, [authState, timeRange, loadData])
+
+  const handleShare = async () => {
+    if (!cardRef.current) return
+    setSharing(true)
+    try {
+      const { toPng } = await import('html-to-image')
+      const dataUrl = await toPng(cardRef.current, { pixelRatio: 2 })
+      const link = document.createElement('a')
+      link.download = 'music-personality.png'
+      link.href = dataUrl
+      link.click()
+    } catch {
+      setLoadError('Could not generate a shareable image.')
+    } finally {
+      setSharing(false)
+    }
+  }
+
   return (
     <div className="page">
       <header className="hero">
-        <h1 className="name" tabIndex={0}>
-          {profile.name}
+        <h1 className="brand" tabIndex={0}>
+          Music Personality
         </h1>
-        <p className="tagline">{profile.title}</p>
-        <a
-          className="link"
-          href={profile.linkedin}
-          target="_blank"
-          rel="noreferrer"
-        >
-          LinkedIn
-        </a>
+        <p className="tagline">
+          Connect Spotify to see what your listening habits say about you.
+        </p>
       </header>
 
-      <main>
-        <section className="section">
-          <h2 className="section-title">Experience</h2>
-          <div className="jobs">
-            {experience.map((job, i) => (
-              <ExperienceItem key={i} job={job} defaultOpen={i === 0} />
-            ))}
+      <main className="content">
+        {!isConfigured() && (
+          <p className="notice">
+            Spotify isn't configured yet — set <code>VITE_SPOTIFY_CLIENT_ID</code>.
+          </p>
+        )}
+
+        {isConfigured() && authState === 'signedOut' && (
+          <div className="connect">
+            <button type="button" className="btn-primary" onClick={beginLogin}>
+              Connect Spotify
+            </button>
+            {import.meta.env.DEV && window.location.hostname === 'localhost' && (
+              <p className="notice notice-small">
+                Spotify's login requires <code>127.0.0.1</code>, not{' '}
+                <code>localhost</code>.{' '}
+                <a
+                  className="link"
+                  href={`http://127.0.0.1:${window.location.port}${window.location.pathname}`}
+                >
+                  Open this page via 127.0.0.1 →
+                </a>
+              </p>
+            )}
           </div>
-        </section>
+        )}
 
-        <section className="section">
-          <h2 className="section-title">Education</h2>
-          {education.map((ed, i) => (
-            <div className="edu" key={i}>
-              <span className="edu-school">{ed.school}</span>
-              <span className="edu-degree">{ed.degree}</span>
-              <span className="edu-meta">
-                {ed.dates} · {ed.location}
-              </span>
-            </div>
-          ))}
-        </section>
-
-        <section className="section">
-          <h2 className="section-title">Skills</h2>
-          <dl className="skills">
-            {skills.map((group) => (
-              <div className="skill-row" key={group.label}>
-                <dt>{group.label}</dt>
-                <dd>
-                  {group.items.map((item) => (
-                    <span className="chip" key={item}>
-                      {item}
-                    </span>
-                  ))}
-                </dd>
+        {authState === 'signedIn' && (
+          <>
+            <div className="toolbar">
+              <div className="range-toggle" role="group" aria-label="Time range">
+                {TIME_RANGES.map((r) => (
+                  <button
+                    key={r.value}
+                    type="button"
+                    className={r.value === timeRange ? 'range-btn is-active' : 'range-btn'}
+                    onClick={() => setTimeRange(r.value)}
+                  >
+                    {r.label}
+                  </button>
+                ))}
               </div>
-            ))}
-          </dl>
-        </section>
+              <button
+                type="button"
+                className="btn-ghost"
+                onClick={() => {
+                  logout()
+                  setAuthState('signedOut')
+                  setData(null)
+                }}
+              >
+                Disconnect
+              </button>
+            </div>
+
+            {loadError && <p className="notice notice-error">{loadError}</p>}
+            {loading && <p className="notice">Loading your top tracks…</p>}
+
+            {!loading && data && (
+              <div className="layout">
+                <section className="panel">
+                  <h3 className="panel-title">Top 15 songs</h3>
+                  <TrackList tracks={data.tracks} />
+                </section>
+
+                <section className="panel panel-right">
+                  <PersonalityCard
+                    ref={cardRef}
+                    personality={data.personality}
+                    timeRangeLabel={TIME_RANGES.find((r) => r.value === timeRange).label}
+                  />
+                  <button
+                    type="button"
+                    className="btn-primary btn-share"
+                    onClick={handleShare}
+                    disabled={sharing}
+                  >
+                    {sharing ? 'Generating…' : 'Download shareable card'}
+                  </button>
+
+                  <GenreBreakdown genres={data.personality.stats.topGenres} />
+
+                  {data.audioFeatures.length > 0 ? (
+                    <MoodGraph tracks={data.tracks} audioFeatures={data.audioFeatures} />
+                  ) : (
+                    <p className="notice notice-small">
+                      Mood map unavailable — Spotify restricts audio-feature
+                      data for newer developer apps.
+                    </p>
+                  )}
+                </section>
+              </div>
+            )}
+          </>
+        )}
       </main>
     </div>
   )

@@ -1,20 +1,20 @@
 .page {
-  max-width: 780px;
+  max-width: 920px;
   margin: 0 auto;
-  padding: clamp(2rem, 6vw, 5rem) clamp(1.25rem, 5vw, 2rem) 5rem;
+  padding: clamp(2rem, 6vw, 4rem) clamp(1.25rem, 5vw, 2rem) 5rem;
 }
 
 /* ---------- Hero ---------- */
 .hero {
   text-align: center;
-  margin-bottom: clamp(2.5rem, 8vw, 4.5rem);
+  margin-bottom: clamp(2rem, 6vw, 3rem);
 }
 
-.name {
+.brand {
   margin: 0;
-  font-size: clamp(2.5rem, 9vw, 5rem);
+  font-size: clamp(2rem, 6vw, 3.25rem);
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   color: #f5f5f7;
   cursor: default;
   user-select: none;
@@ -22,203 +22,255 @@
   transition: text-shadow 0.4s ease, color 0.4s ease, transform 0.4s ease;
 }
 
-.name:hover,
-.name:focus-visible {
+.brand:hover,
+.brand:focus-visible {
   outline: none;
   color: #ffffff;
-  transform: scale(1.03);
+  transform: scale(1.02);
   text-shadow:
-    0 0 8px rgba(120, 180, 255, 0.75),
-    0 0 24px rgba(120, 180, 255, 0.65),
-    0 0 48px rgba(90, 140, 255, 0.55),
-    0 0 96px rgba(90, 140, 255, 0.4);
+    0 0 8px rgba(120, 255, 170, 0.75),
+    0 0 24px rgba(80, 230, 150, 0.6),
+    0 0 48px rgba(30, 215, 96, 0.5);
 }
 
 .tagline {
-  margin: 0.9rem 0 0.6rem;
+  margin: 0.75rem 0 0;
   color: #b8bcc8;
-  font-size: 1.05rem;
+  font-size: 1.02rem;
 }
 
-.link {
-  color: #8fb6ff;
-  text-decoration: none;
+/* ---------- Notices / buttons ---------- */
+.notice {
+  color: #b8bcc8;
+  text-align: center;
   font-size: 0.95rem;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s ease;
 }
 
-.link:hover {
-  border-color: #8fb6ff;
+.notice-small {
+  font-size: 0.82rem;
+  color: #7f8697;
 }
 
-/* ---------- Sections ---------- */
-.section {
-  margin-top: clamp(2rem, 6vw, 3.25rem);
+.notice-error {
+  color: #ff8a8a;
 }
 
-.section-title {
+.connect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.btn-primary {
+  background: #1ed760;
+  color: #06210f;
+  border: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.btn-primary:hover {
+  background: #24e169;
+  transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: default;
+  transform: none;
+}
+
+.btn-ghost {
+  background: none;
+  border: 1px solid #2c2f3b;
+  color: #b8bcc8;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-ghost:hover {
+  border-color: #5c6273;
+  color: #ededf2;
+}
+
+/* ---------- Toolbar ---------- */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.75rem;
+}
+
+.range-toggle {
+  display: flex;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #23252e;
+  border-radius: 999px;
+  padding: 0.25rem;
+}
+
+.range-btn {
+  background: none;
+  border: none;
+  color: #8a90a0;
+  font-size: 0.85rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.range-btn.is-active {
+  background: #1ed760;
+  color: #06210f;
+  font-weight: 600;
+}
+
+/* ---------- Layout ---------- */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  align-items: start;
+}
+
+@media (max-width: 720px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel-title {
   font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   color: #7f8697;
-  margin: 0 0 1.1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid #23252e;
+  margin: 0 0 0.9rem;
 }
 
-/* ---------- Experience ---------- */
-.jobs {
+.panel-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ---------- Track list ---------- */
+.track-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.job {
-  border: 1px solid #23252e;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.02);
-  transition: border-color 0.2s ease, background 0.2s ease;
-}
-
-.job.is-open {
-  border-color: #34384a;
-  background: rgba(255, 255, 255, 0.035);
-}
-
-.job-header {
-  width: 100%;
+.track-row {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.75rem;
-  padding: 0.95rem 1.1rem;
-  background: none;
-  border: 0;
-  color: inherit;
-  font: inherit;
-  text-align: left;
-  cursor: pointer;
+  padding: 0.4rem 0.5rem;
+  border-radius: 8px;
 }
 
-.job-header:focus-visible {
-  outline: 2px solid #8fb6ff;
-  outline-offset: -2px;
-  border-radius: 10px;
-}
-
-.job-chevron {
-  color: #7f8697;
-  font-size: 0.85rem;
-  line-height: 1.6;
-  transition: transform 0.2s ease;
-}
-
-.job.is-open .job-chevron {
-  transform: rotate(90deg);
-}
-
-.job-heading {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
-.job-title {
-  color: #ededf2;
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-.job-sep {
+.track-rank {
+  width: 1.4rem;
+  text-align: right;
   color: #5c6273;
-  font-weight: 400;
-}
-
-.job-meta {
-  color: #8a90a0;
   font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
 }
 
-.job-body {
-  padding: 0 1.1rem 1.05rem 2.85rem;
+.track-art {
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  object-fit: cover;
+  background: #1a1b22;
+  flex-shrink: 0;
 }
 
-.job-body ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.track-info {
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
+  min-width: 0;
 }
 
-.job-body li {
-  position: relative;
-  padding-left: 1.1rem;
+.track-name {
+  color: #ededf2;
+  font-size: 0.92rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-artist {
+  color: #8a90a0;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---------- Personality card ---------- */
+.personality-card {
+  background: linear-gradient(160deg, #16321f 0%, #0e0f14 65%);
+  border: 1px solid #234030;
+  border-radius: 16px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.personality-eyebrow {
+  color: #6fe39a;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.personality-title {
+  margin: 0;
+  color: #f5f5f7;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.personality-desc {
+  margin: 0;
   color: #c7cad4;
-  font-size: 0.93rem;
+  font-size: 0.95rem;
   line-height: 1.55;
 }
 
-.job-body li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.6em;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #5a8cff;
+.personality-range {
+  margin-top: 0.4rem;
+  color: #5c9c74;
+  font-size: 0.78rem;
 }
 
-/* ---------- Education ---------- */
-.edu {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
+.btn-share {
+  align-self: flex-start;
 }
 
-.edu-school {
-  color: #ededf2;
-  font-weight: 600;
-}
-
-.edu-degree {
-  color: #c7cad4;
-  font-size: 0.95rem;
-}
-
-.edu-meta {
-  color: #8a90a0;
-  font-size: 0.85rem;
-}
-
-/* ---------- Skills ---------- */
-.skills {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-}
-
-.skill-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.5rem 0.9rem;
-}
-
-.skill-row dt {
-  min-width: 6rem;
-  color: #8a90a0;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.skill-row dd {
-  margin: 0;
+/* ---------- Genres ---------- */
+.genre-chips {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
@@ -230,16 +282,38 @@
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.03);
   color: #d3d6de;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
+}
+
+/* ---------- Mood graph ---------- */
+.mood-graph svg {
+  display: block;
+  max-width: 280px;
+}
+
+.mood-axis {
+  stroke: #23252e;
+  stroke-width: 1;
+}
+
+.mood-label {
+  fill: #5c6273;
+  font-size: 9px;
+}
+
+.mood-point {
+  fill: #1ed760;
+  fill-opacity: 0.85;
+  stroke: #06210f;
+  stroke-width: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .name,
-  .job-chevron {
+  .brand {
     transition: text-shadow 0.4s ease, color 0.4s ease;
   }
-  .name:hover,
-  .name:focus-visible {
+  .brand:hover,
+  .brand:focus-visible {
     transform: none;
   }
 }

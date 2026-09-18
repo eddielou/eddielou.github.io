@@ -7,7 +7,13 @@ import {
   isLoggedIn,
   logout,
 } from './spotify/auth'
-import { AuthExpiredError, getAudioFeatures, getTopArtists, getTopTracks } from './spotify/api'
+import {
+  AuthExpiredError,
+  getAudioFeatures,
+  getRecentlyPlayed,
+  getTopArtists,
+  getTopTracks,
+} from './spotify/api'
 import { buildPersonality } from './lib/personality'
 import TrackList from './components/TrackList'
 import PersonalityCard from './components/PersonalityCard'
@@ -42,13 +48,19 @@ function App() {
     setLoading(true)
     setLoadError(null)
     try {
-      const [tracks, artists] = await Promise.all([
+      const [tracks, artists, recentlyPlayed] = await Promise.all([
         getTopTracks(range, 15),
         getTopArtists(range, 30),
+        getRecentlyPlayed(50),
       ])
       const audioFeatures = await getAudioFeatures(tracks.map((t) => t.id))
       const personality = buildPersonality({ tracks, artists, audioFeatures })
-      setData({ tracks, artists, audioFeatures, personality })
+      const recentPlayCounts = {}
+      recentlyPlayed.forEach((item) => {
+        const id = item.track?.id
+        if (id) recentPlayCounts[id] = (recentPlayCounts[id] || 0) + 1
+      })
+      setData({ tracks, artists, audioFeatures, personality, recentPlayCounts })
     } catch (err) {
       if (err instanceof AuthExpiredError) {
         logout()
@@ -156,7 +168,12 @@ function App() {
               <div className="layout">
                 <section className="panel">
                   <h3 className="panel-title">Top 15 songs</h3>
-                  <TrackList tracks={data.tracks} />
+                  <TrackList tracks={data.tracks} recentPlayCounts={data.recentPlayCounts} />
+                  <p className="notice notice-small track-list-footnote">
+                    Play counts are from your last 50 plays on Spotify, not the
+                    "{TIME_RANGES.find((r) => r.value === timeRange).label}" window above —
+                    Spotify's API doesn't expose real per-range play counts.
+                  </p>
                 </section>
 
                 <section className="panel panel-right">

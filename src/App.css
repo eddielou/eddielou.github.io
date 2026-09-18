@@ -206,6 +206,19 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
+  flex: 1;
+}
+
+.track-plays {
+  flex-shrink: 0;
+  color: #6fe39a;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.track-list-footnote {
+  margin-top: 0.9rem;
+  text-align: left;
 }
 
 .track-name {

@@ -44,3 +44,17 @@ export async function getAudioFeatures(trackIds) {
     return []
   }
 }
+
+// Spotify has no "play count" endpoint at all — this is the closest proxy:
+// your last 50 played tracks, which is *not* scoped to the selected time
+// range. Fails soft (e.g. missing scope on an older session) so the track
+// list still renders without counts.
+export async function getRecentlyPlayed(limit = 50) {
+  try {
+    const data = await spotifyFetch(`/me/player/recently-played?limit=${limit}`)
+    return data.items || []
+  } catch (err) {
+    if (err instanceof AuthExpiredError) throw err
+    return []
+  }
+}

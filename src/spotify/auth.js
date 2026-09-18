@@ -1,5 +1,5 @@
 const CLIENT_ID = import.meta.env.VITE_SPOTIFY_CLIENT_ID
-const SCOPES = 'user-top-read'
+const SCOPES = 'user-top-read user-read-recently-played'
 
 const STORAGE_KEYS = {
   verifier: 'spotify_code_verifier',

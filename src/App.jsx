@@ -1,214 +1,206 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
+import { START_ELO, updateElo } from './elo'
 import './App.css'
-import {
-  beginLogin,
-  completeLoginIfRedirected,
-  isConfigured,
-  isLoggedIn,
-  logout,
-} from './spotify/auth'
-import {
-  AuthExpiredError,
-  getAudioFeatures,
-  getRecentlyPlayed,
-  getTopArtists,
-  getTopTracks,
-} from './spotify/api'
-import { buildPersonality } from './lib/personality'
-import TrackList from './components/TrackList'
-import PersonalityCard from './components/PersonalityCard'
-import GenreBreakdown from './components/GenreBreakdown'
-import MoodGraph from './components/MoodGraph'
 
-const TIME_RANGES = [
-  { value: 'short_term', label: 'Last 4 weeks' },
-  { value: 'medium_term', label: 'Last 6 months' },
-  { value: 'long_term', label: 'All time' },
-]
+const STORAGE_KEY = 'elo-ranker-cards'
 
-function App() {
-  const [authState, setAuthState] = useState('checking') // checking | signedOut | signedIn
-  const [timeRange, setTimeRange] = useState('short_term')
-  const [data, setData] = useState(null) // { tracks, artists, audioFeatures, personality }
-  const [loadError, setLoadError] = useState(null)
-  const [loading, setLoading] = useState(false)
-  const [sharing, setSharing] = useState(false)
-  const cardRef = useRef(null)
+function loadCards() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY))
+    return Array.isArray(parsed) ? parsed : []
+  } catch {
+    return []
+  }
+}
 
-  useEffect(() => {
-    completeLoginIfRedirected().then((result) => {
-      if (result.status === 'error') {
-        setLoadError('Spotify sign-in failed. Please try again.')
-      }
-      setAuthState(isLoggedIn() ? 'signedIn' : 'signedOut')
-    })
-  }, [])
+// Pick two distinct cards, favouring ones that have been compared least and
+// avoiding an immediate repeat of the previous pairing.
+function pickPair(cards, previous) {
+  const pool = cards.map((c, i) => ({ i, w: 1 / (1 + c.games) }))
+  const draw = (items) => {
+    const total = items.reduce((s, x) => s + x.w, 0)
+    let r = Math.random() * total
+    return items.find((x) => (r -= x.w) < 0) ?? items[items.length - 1]
+  }
+  for (let tries = 0; tries < 10; tries++) {
+    const a = draw(pool)
+    const b = draw(pool.filter((x) => x.i !== a.i))
+    const pair = Math.random() < 0.5 ? [a.i, b.i] : [b.i, a.i]
+    const same =
+      previous && [...pair].sort().join() === [...previous].sort().join()
+    if (!same || cards.length <= 2) return pair
+  }
+  return [0, 1]
+}
 
-  const loadData = useCallback(async (range) => {
-    setLoading(true)
-    setLoadError(null)
-    try {
-      const [tracks, artists, recentlyPlayed] = await Promise.all([
-        getTopTracks(range, 15),
-        getTopArtists(range, 30),
-        getRecentlyPlayed(50),
-      ])
-      const audioFeatures = await getAudioFeatures(tracks.map((t) => t.id))
-      const personality = buildPersonality({ tracks, artists, audioFeatures })
-      const recentPlayCounts = {}
-      recentlyPlayed.forEach((item) => {
-        const id = item.track?.id
-        if (id) recentPlayCounts[id] = (recentPlayCounts[id] || 0) + 1
-      })
-      setData({ tracks, artists, audioFeatures, personality, recentPlayCounts })
-    } catch (err) {
-      if (err instanceof AuthExpiredError) {
-        logout()
-        setAuthState('signedOut')
-        setData(null)
-      } else {
-        setLoadError('Could not load your Spotify data. Please try again.')
-      }
-    } finally {
-      setLoading(false)
-    }
-  }, [])
+export default function App() {
+  const [cards, setCards] = useState(loadCards)
+  const [text, setText] = useState('')
+  const [ranking, setRanking] = useState(false)
+  const [pair, setPair] = useState(null)
 
   useEffect(() => {
-    if (authState === 'signedIn') loadData(timeRange)
-  }, [authState, timeRange, loadData])
-
-  const handleShare = async () => {
-    if (!cardRef.current) return
-    setSharing(true)
     try {
-      const { toPng } = await import('html-to-image')
-      const dataUrl = await toPng(cardRef.current, { pixelRatio: 2 })
-      const link = document.createElement('a')
-      link.download = 'music-personality.png'
-      link.href = dataUrl
-      link.click()
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(cards))
     } catch {
-      setLoadError('Could not generate a shareable image.')
-    } finally {
-      setSharing(false)
+      /* storage unavailable */
     }
+  }, [cards])
+
+  const addCard = (e) => {
+    e.preventDefault()
+    const t = text.trim()
+    if (!t) return
+    setCards((cs) => [
+      ...cs,
+      { id: crypto.randomUUID(), text: t, elo: START_ELO, games: 0 },
+    ])
+    setText('')
   }
 
+  const removeCard = (id) => setCards((cs) => cs.filter((c) => c.id !== id))
+
+  const startRanking = () => {
+    setPair(pickPair(cards, null))
+    setRanking(true)
+  }
+
+  const choose = useCallback(
+    (side) => {
+      if (!pair) return
+      const winner = cards[pair[side]]
+      const loser = cards[pair[1 - side]]
+      const [w, l] = updateElo(winner.elo, loser.elo)
+      const next = cards.map((c) =>
+        c.id === winner.id
+          ? { ...c, elo: w, games: c.games + 1 }
+          : c.id === loser.id
+            ? { ...c, elo: l, games: c.games + 1 }
+            : c,
+      )
+      setCards(next)
+      setPair(pickPair(next, pair))
+    },
+    [cards, pair],
+  )
+
+  useEffect(() => {
+    if (!ranking) return
+    const onKey = (e) => {
+      if (e.key === 'ArrowLeft') choose(0)
+      else if (e.key === 'ArrowRight') choose(1)
+      else if (e.key === 'Escape') setRanking(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [ranking, choose])
+
+  const resetElo = () =>
+    setCards((cs) => cs.map((c) => ({ ...c, elo: START_ELO, games: 0 })))
+
+  const sorted = [...cards].sort((a, b) => b.elo - a.elo)
+  const canRank = cards.length >= 2
+  const left = ranking && pair ? cards[pair[0]] : null
+  const right = ranking && pair ? cards[pair[1]] : null
+
   return (
-    <div className="page">
-      <header className="hero">
-        <h1 className="brand" tabIndex={0}>
-          Music Personality
-        </h1>
-        <p className="tagline">
-          Connect Spotify to see what your listening habits say about you.
-        </p>
+    <div className="app">
+      <header>
+        <h1>ELO RANKER</h1>
+        <p>&gt; make cards. pick winners. see the ranking_</p>
       </header>
 
-      <main className="content">
-        {!isConfigured() && (
-          <p className="notice">
-            Spotify isn't configured yet — set <code>VITE_SPOTIFY_CLIENT_ID</code>.
-          </p>
-        )}
-
-        {isConfigured() && authState === 'signedOut' && (
-          <div className="connect">
-            <button type="button" className="btn-primary" onClick={beginLogin}>
-              Connect Spotify
-            </button>
-            {import.meta.env.DEV && window.location.hostname === 'localhost' && (
-              <p className="notice notice-small">
-                Spotify's login requires <code>127.0.0.1</code>, not{' '}
-                <code>localhost</code>.{' '}
-                <a
-                  className="link"
-                  href={`http://127.0.0.1:${window.location.port}${window.location.pathname}`}
-                >
-                  Open this page via 127.0.0.1 →
-                </a>
-              </p>
-            )}
-          </div>
-        )}
-
-        {authState === 'signedIn' && (
-          <>
-            <div className="toolbar">
-              <div className="range-toggle" role="group" aria-label="Time range">
-                {TIME_RANGES.map((r) => (
+      <main>
+        <section className="stage">
+          {ranking && left && right ? (
+            <>
+              <div className="duel">
+                {[left, right].map((c, side) => (
                   <button
-                    key={r.value}
-                    type="button"
-                    className={r.value === timeRange ? 'range-btn is-active' : 'range-btn'}
-                    onClick={() => setTimeRange(r.value)}
+                    key={c.id}
+                    className="card duel-card"
+                    onClick={() => choose(side)}
                   >
-                    {r.label}
+                    <span className="card-text">{c.text}</span>
+                    <span className="elo">{Math.round(c.elo)}</span>
+                    <span className="key">{side ? '→' : '←'}</span>
                   </button>
                 ))}
               </div>
-              <button
-                type="button"
-                className="btn-ghost"
-                onClick={() => {
-                  logout()
-                  setAuthState('signedOut')
-                  setData(null)
-                }}
-              >
-                Disconnect
+              <button className="btn" onClick={() => setRanking(false)}>
+                Done (Esc)
               </button>
-            </div>
+            </>
+          ) : (
+            <>
+              <form className="add" onSubmit={addCard}>
+                <input
+                  value={text}
+                  onChange={(e) => setText(e.target.value)}
+                  placeholder="New card text..."
+                  maxLength={120}
+                  autoFocus
+                />
+                <button className="btn" type="submit">
+                  Add
+                </button>
+              </form>
 
-            {loadError && <p className="notice notice-error">{loadError}</p>}
-            {loading && <p className="notice">Loading your top tracks…</p>}
-
-            {!loading && data && (
-              <div className="layout">
-                <section className="panel">
-                  <h3 className="panel-title">Top 15 songs</h3>
-                  <TrackList tracks={data.tracks} recentPlayCounts={data.recentPlayCounts} />
-                  <p className="notice notice-small track-list-footnote">
-                    Play counts are from your last 50 plays on Spotify, not the
-                    "{TIME_RANGES.find((r) => r.value === timeRange).label}" window above —
-                    Spotify's API doesn't expose real per-range play counts.
-                  </p>
-                </section>
-
-                <section className="panel panel-right">
-                  <PersonalityCard
-                    ref={cardRef}
-                    personality={data.personality}
-                    timeRangeLabel={TIME_RANGES.find((r) => r.value === timeRange).label}
-                  />
-                  <button
-                    type="button"
-                    className="btn-primary btn-share"
-                    onClick={handleShare}
-                    disabled={sharing}
-                  >
-                    {sharing ? 'Generating…' : 'Download shareable card'}
-                  </button>
-
-                  <GenreBreakdown genres={data.personality.stats.topGenres} />
-
-                  {data.audioFeatures.length > 0 ? (
-                    <MoodGraph tracks={data.tracks} audioFeatures={data.audioFeatures} />
-                  ) : (
-                    <p className="notice notice-small">
-                      Mood map unavailable — Spotify restricts audio-feature
-                      data for newer developer apps.
-                    </p>
-                  )}
-                </section>
+              <div className="cards">
+                {cards.map((c) => (
+                  <div className="card" key={c.id}>
+                    <button
+                      className="remove"
+                      onClick={() => removeCard(c.id)}
+                      aria-label={`Remove ${c.text}`}
+                    >
+                      ×
+                    </button>
+                    <span className="card-text">{c.text}</span>
+                    <span className="elo">{Math.round(c.elo)}</span>
+                  </div>
+                ))}
+                {cards.length === 0 && (
+                  <p className="empty">No cards yet. Add at least two.</p>
+                )}
               </div>
-            )}
-          </>
-        )}
+
+              <div className="actions">
+                <button
+                  className="btn primary"
+                  onClick={startRanking}
+                  disabled={!canRank}
+                >
+                  Ranking
+                </button>
+                <button
+                  className="btn"
+                  onClick={resetElo}
+                  disabled={cards.length === 0}
+                >
+                  Reset ELO
+                </button>
+              </div>
+            </>
+          )}
+        </section>
+
+        <aside className="board">
+          <h2>LEADERBOARD</h2>
+          {sorted.length === 0 ? (
+            <p className="empty">—</p>
+          ) : (
+            <ol>
+              {sorted.map((c) => (
+                <li key={c.id}>
+                  <span className="name">{c.text}</span>
+                  <span className="elo">{Math.round(c.elo)}</span>
+                </li>
+              ))}
+            </ol>
+          )}
+        </aside>
       </main>
     </div>
   )
 }
-
-export default App

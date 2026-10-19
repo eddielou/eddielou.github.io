@@ -11,6 +11,7 @@
   --scan: rgba(0, 0, 0, 0.18);
   --font: 'Courier New', Courier, monospace;
   font-family: var(--font);
+  line-height: 1.35;
 }
 
 * {
@@ -74,14 +75,17 @@ body::after {
 /* rem units drive all sizing, so scale the root per font to keep widths sane */
 :root[data-font='plex'] {
   --font: 'IBM Plex Mono', monospace;
+  line-height: 1.4;
 }
 
 :root[data-font='vt323'] {
   --font: 'VT323', monospace;
   font-size: 20px;
+  line-height: 1.15;
 }
 
 :root[data-font='pixel'] {
   --font: 'Press Start 2P', monospace;
   font-size: 11px;
+  line-height: 1.8;
 }

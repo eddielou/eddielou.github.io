@@ -48,6 +48,17 @@ function loadCards(key, items) {
 
 const HISTORY_CAP = 500
 
+// Names of cards the user deleted, for the export's "removed" section.
+function loadRemoved(key) {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(`${key}:removed`))
+    if (Array.isArray(parsed)) return parsed
+  } catch {
+    /* fall through */
+  }
+  return []
+}
+
 function loadHistory(key) {
   try {
     const parsed = JSON.parse(localStorage.getItem(`${key}:history`))
@@ -146,8 +157,10 @@ export default function App() {
 function Ranker({ storageKey: key, items, editable }) {
   const [cards, setCards] = useState(() => loadCards(key, items))
   const [text, setText] = useState('')
+  const [bulk, setBulk] = useState(null) // null = closed, string = textarea contents
   const [session, setSession] = useState(null)
   const [history, setHistory] = useState(() => loadHistory(key))
+  const [removed, setRemoved] = useState(() => loadRemoved(key))
   const [showHistory, setShowHistory] = useState(false)
   // Loser of the latest choice, when that was its first loss.
   const [firstLoss, setFirstLoss] = useState(null)
@@ -168,6 +181,14 @@ function Ranker({ storageKey: key, items, editable }) {
     }
   }, [history, key])
 
+  useEffect(() => {
+    try {
+      localStorage.setItem(`${key}:removed`, JSON.stringify(removed))
+    } catch {
+      /* storage unavailable */
+    }
+  }, [removed, key])
+
   const addCard = (e) => {
     e.preventDefault()
     const t = text.trim()
@@ -179,12 +200,40 @@ function Ranker({ storageKey: key, items, editable }) {
     setText('')
   }
 
-  const removeCard = (id) => setCards((cs) => cs.filter((c) => c.id !== id))
+  const addBulk = (e) => {
+    e.preventDefault()
+    const lines = bulk
+      .split('\n')
+      .map((l) => l.trim().slice(0, 120))
+      .filter(Boolean)
+    if (!lines.length) return
+    setCards((cs) => [
+      ...cs,
+      ...lines.map((t) => ({
+        id: crypto.randomUUID(),
+        text: t,
+        elo: START_ELO,
+        games: 0,
+        wins: 0,
+        losses: 0,
+      })),
+    ])
+    setBulk(null)
+  }
+
+  const noteRemoved = (...texts) => setRemoved((r) => [...r, ...texts])
+
+  const removeCard = (id) => {
+    const card = cards.find((c) => c.id === id)
+    if (card) noteRemoved(card.text)
+    setCards((cs) => cs.filter((c) => c.id !== id))
+  }
 
   // Removing a first-time loser from the banner also undoes that matchup:
   // the winner gets its previous rating/record back and the history entry goes.
   const removeFirstLoser = useCallback(() => {
-    const { id, winner } = firstLoss
+    const { id, winner, text } = firstLoss
+    noteRemoved(text)
     setCards((cs) =>
       cs.filter((c) => c.id !== id).map((c) => (c.id === winner.id ? winner : c)),
     )
@@ -193,15 +242,20 @@ function Ranker({ storageKey: key, items, editable }) {
     setSession((s) => (cards.length - 1 < 2 ? null : removeFromSession(s, id)))
   }, [cards.length, firstLoss])
 
-  const removeDuelCard = useCallback(
-    (id) => {
+  // Delete cards mid-ranking (one via ×, or both of the pair via ↑).
+  const removeDuelCards = useCallback(
+    (ids) => {
       setFirstLoss(null)
-      const next = cards.filter((c) => c.id !== id)
+      noteRemoved(...cards.filter((c) => ids.includes(c.id)).map((c) => c.text))
+      const next = cards.filter((c) => !ids.includes(c.id))
       setCards(next)
-      setSession((s) => (next.length < 2 ? null : removeFromSession(s, id)))
+      setSession((s) =>
+        next.length < 2 ? null : ids.reduce(removeFromSession, s),
+      )
     },
     [cards],
   )
+  const removeDuelCard = (id) => removeDuelCards([id])
 
   const startRanking = () => setSession(startSession(cards.map((c) => c.id)))
 
@@ -247,23 +301,30 @@ function Ranker({ storageKey: key, items, editable }) {
     const onKey = (e) => {
       if (e.key === 'ArrowLeft') choose(0)
       else if (e.key === 'ArrowRight') choose(1)
+      else if (e.key === 'ArrowUp' && pair) {
+        e.preventDefault()
+        removeDuelCards(pair)
+      }
       else if (e.key === 'Escape') setSession(null)
       else if ((e.key === 'r' || e.key === 'R') && firstLoss)
         removeFirstLoser()
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [ranking, choose, firstLoss, removeFirstLoser])
+  }, [ranking, choose, firstLoss, removeFirstLoser, pair, removeDuelCards])
 
   // Custom: keep the user's cards, zero their ratings. Premade: restore the
   // full original list at 1000.
   // While ranking, it restarts the session on the fresh cards.
   const reset = () => {
+    const what = editable ? 'all ratings' : 'all cards and ratings'
+    if (!window.confirm(`Reset ${what}? This cannot be undone.`)) return
     const next = editable
       ? cards.map((c) => ({ ...c, elo: START_ELO, games: 0, wins: 0, losses: 0 }))
       : defaultCards(key, items)
     setCards(next)
     setHistory([])
+    if (!editable) setRemoved([])
     setFirstLoss(null)
     setSession(
       ranking && next.length >= 2 ? startSession(next.map((c) => c.id)) : null,
@@ -271,6 +332,38 @@ function Ranker({ storageKey: key, items, editable }) {
   }
 
   const sorted = [...cards].sort((a, b) => b.elo - a.elo)
+
+  const exportRanking = async () => {
+    const csv = (t) => (/[",\n]/.test(t) ? `"${t.replaceAll('"', '""')}"` : t)
+    const lines = ['#, Card Name, Elo, W/L']
+    sorted.forEach((c, i) =>
+      lines.push(
+        `${i + 1}, ${csv(c.text)}, ${Math.round(c.elo)}, ${c.wins ?? 0}/${c.losses ?? 0}`,
+      ),
+    )
+    if (removed.length) {
+      lines.push('', 'Removed (unranked)', ...removed.map(csv))
+    }
+    const blob = new Blob([lines.join('\n') + '\n'], { type: 'text/plain' })
+    const name = `rank-things-${key.replace(/[^a-z0-9]+/gi, '-')}.txt`
+    try {
+      // Native save dialog where supported.
+      const handle = await window.showSaveFilePicker({
+        suggestedName: name,
+        types: [{ description: 'Text file', accept: { 'text/plain': ['.txt'] } }],
+      })
+      const w = await handle.createWritable()
+      await w.write(blob)
+      await w.close()
+    } catch (err) {
+      if (err?.name === 'AbortError') return
+      const a = document.createElement('a')
+      a.href = URL.createObjectURL(blob)
+      a.download = name
+      a.click()
+      URL.revokeObjectURL(a.href)
+    }
+  }
   const byId = new Map(cards.map((c) => [c.id, c]))
   const duel = pair ? pair.map((id) => byId.get(id)) : null
 
@@ -284,6 +377,11 @@ function Ranker({ storageKey: key, items, editable }) {
                 ? 'Ranking complete.'
                 : `Choices left: up to ${choicesLeft(session)}`}
             </p>
+            {!finished && (
+              <p className="keys">
+                Click a card or press the Left / Right arrow key to pick the winner. Up arrow discards both.
+              </p>
+            )}
             {firstLoss && !finished && (
               <p className="first-loss">
                 <span>
@@ -309,7 +407,7 @@ function Ranker({ storageKey: key, items, editable }) {
                       <span className="card-text">{c.text}</span>
                       <span className="elo">{Math.round(c.elo)}</span>
                       <span className="rec">{record(c)}</span>
-                      <span className="key">{side ? '→' : '←'}</span>
+                      <span className="key">{side ? 'Right key' : 'Left key'}</span>
                     </button>
                     <button
                       className="remove"
@@ -329,6 +427,9 @@ function Ranker({ storageKey: key, items, editable }) {
               <button className="btn" onClick={reset}>
                 {editable ? 'Reset ELO' : 'Reset all'}
               </button>
+              <button className="btn" onClick={exportRanking}>
+                Export
+              </button>
             </div>
           </>
         ) : (
@@ -344,6 +445,28 @@ function Ranker({ storageKey: key, items, editable }) {
                 />
                 <button className="btn" type="submit">
                   Add
+                </button>
+                <button
+                  className="btn"
+                  type="button"
+                  onClick={() => setBulk(bulk === null ? '' : null)}
+                >
+                  Bulk
+                </button>
+              </form>
+            )}
+            {editable && bulk !== null && (
+              <form className="bulk" onSubmit={addBulk}>
+                <textarea
+                  value={bulk}
+                  onChange={(e) => setBulk(e.target.value)}
+                  placeholder={'One card per line...\nPizza\nTacos\nSushi'}
+                  rows={6}
+                  autoFocus
+                />
+                <button className="btn" type="submit">
+                  Add{' '}
+                  {bulk.split('\n').filter((l) => l.trim()).length || ''} cards
                 </button>
               </form>
             )}
@@ -382,6 +505,13 @@ function Ranker({ storageKey: key, items, editable }) {
                 disabled={editable && cards.length === 0}
               >
                 {editable ? 'Reset ELO' : 'Reset all'}
+              </button>
+              <button
+                className="btn"
+                onClick={exportRanking}
+                disabled={cards.length === 0}
+              >
+                Export
               </button>
               {cards.length >= 2 && (
                 <span className="hint">

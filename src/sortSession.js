@@ -51,20 +51,43 @@ export function currentPair(s) {
   return s.flip ? [other, s.x] : [s.x, other]
 }
 
+// Choose which side `x` appears on so a card that carries over from the
+// previous matchup stays on the side it was on.
+function withStableSides(s, prev) {
+  if (isDone(s)) return s
+  const other = s.sorted[Math.floor((s.lo + s.hi) / 2)]
+  let flip = Math.random() < 0.5
+  if (prev) {
+    if (s.x === prev[0]) flip = false
+    else if (s.x === prev[1]) flip = true
+    else if (other === prev[0]) flip = true
+    else if (other === prev[1]) flip = false
+  }
+  return { ...s, flip }
+}
+
 export function answer(s, winnerId) {
+  const prev = currentPair(s)
   const mid = Math.floor((s.lo + s.hi) / 2)
   const xWins = winnerId === s.x
-  return advance({
-    ...s,
-    lo: xWins ? s.lo : mid + 1,
-    hi: xWins ? mid : s.hi,
-    flip: Math.random() < 0.5,
-  })
+  return withStableSides(
+    advance({
+      ...s,
+      lo: xWins ? s.lo : mid + 1,
+      hi: xWins ? mid : s.hi,
+    }),
+    prev,
+  )
 }
 
 // Drop a card without losing progress. Removing a ranked card invalidates the
 // current search bounds, so the card being inserted starts its search again.
 export function removeFromSession(s, id) {
+  const prev = isDone(s) ? null : currentPair(s)
+  return withStableSides(removeRaw(s, id), prev)
+}
+
+function removeRaw(s, id) {
   if (s.x === id) {
     const [x, ...pending] = s.pending
     return advance({ ...s, x: x ?? null, pending, lo: 0, hi: s.sorted.length, flip: Math.random() < 0.5 })

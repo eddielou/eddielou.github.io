@@ -18,14 +18,14 @@ header p {
 
 main {
   display: grid;
-  grid-template-columns: 1fr 280px;
+  grid-template-columns: minmax(0, 1fr) 320px;
   gap: 1.5rem;
   align-items: start;
 }
 
 @media (max-width: 720px) {
   main {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -79,6 +79,7 @@ main {
 }
 
 input,
+textarea,
 .btn,
 .card {
   font: inherit;
@@ -134,7 +135,7 @@ input:focus {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(150px, 100%), 1fr));
   gap: 0.8rem;
   margin-bottom: 1.25rem;
 }
@@ -187,7 +188,7 @@ input:focus {
 
 .duel {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 1.25rem;
   margin-bottom: 1.25rem;
 }
@@ -212,7 +213,7 @@ input:focus {
 .duel-card .key {
   align-self: center;
   color: var(--dim);
-  font-size: 1.5rem;
+  font-size: 0.8rem;
 }
 
 .stage > .btn:last-child {
@@ -317,12 +318,10 @@ header {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
-  border: 1px solid var(--line);
-  background: var(--line);
 }
 
 .cards:has(.art) {
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(120px, 100%), 1fr));
 }
 
 .cards .card:has(.art) {
@@ -495,4 +494,63 @@ header {
 
 .font-label {
   margin-top: 1rem;
+}
+
+.bulk {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin: -0.4rem 0 1.25rem;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  resize: vertical;
+}
+
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
+}
+
+.art.blank {
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+/* Firefox sizes flex/grid items from unbroken word widths unless min-width is
+   0 and break-word is set as well as overflow-wrap: anywhere. */
+.stage,
+.board,
+.card,
+.duel-wrap,
+.card-text,
+.board li,
+.board .name {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.card-text,
+.board .name,
+.first-loss span,
+.note,
+.hint,
+.progress {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.card,
+.duel-card {
+  overflow: hidden;
+}
+
+.keys {
+  margin: -0.5rem 0 1rem;
+  color: var(--dim);
+  font-size: 0.8rem;
+  overflow-wrap: anywhere;
 }

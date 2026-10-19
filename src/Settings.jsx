@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { FONTS, THEMES } from './themes'
 
-export default function Settings({ theme, onTheme, font, onFont }) {
+export default function Settings({ theme, onTheme, font, onFont, spotify }) {
   const [open, setOpen] = useState(false)
   const ref = useRef(null)
 
@@ -63,6 +63,20 @@ export default function Settings({ theme, onTheme, font, onFont }) {
               {f.label}
             </button>
           ))}
+          {spotify?.configured && (
+            <>
+              <p className="setting-label font-label">Spotify</p>
+              {spotify.loggedIn ? (
+                <button className="theme-opt" onClick={spotify.onDisconnect}>
+                  Disconnect
+                </button>
+              ) : (
+                <button className="theme-opt" onClick={spotify.onConnect}>
+                  Connect Spotify
+                </button>
+              )}
+            </>
+          )}
         </div>
       )}
     </div>

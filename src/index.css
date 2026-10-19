@@ -1,21 +1,91 @@
 :root {
   color-scheme: dark;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif;
+  --bg: #140c28;
+  --fg: #f4e9ff;
+  --dim: #8d78b5;
+  --line: #41296f;
+  --accent: #ff5fa8;
+  --glow: rgba(255, 95, 168, 0.55);
+  --hover: rgba(255, 95, 168, 0.1);
+  --danger: #ff5f6d;
+  --scan: rgba(0, 0, 0, 0.18);
+  --font: 'Courier New', Courier, monospace;
+  font-family: var(--font);
+  line-height: 1.35;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html,
-body,
-#root {
-  height: 100%;
-}
-
 body {
   margin: 0;
-  background: radial-gradient(circle at 50% 40%, #15161c 0%, #0a0a0d 70%);
-  color: #f5f5f7;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+/* subtle CRT scanlines */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0 2px,
+    var(--scan) 2px 3px
+  );
+}
+
+:root[data-theme='gameboy'] {
+  --bg: #0f380f;
+  --fg: #9bbc0f;
+  --dim: #6b8f12;
+  --line: #306230;
+  --accent: #cadc9f;
+  --glow: rgba(155, 188, 15, 0.4);
+  --hover: rgba(155, 188, 15, 0.12);
+  --danger: #cadc9f;
+}
+
+:root[data-theme='midnight'] {
+  --bg: #0b1220;
+  --fg: #cfe3ff;
+  --dim: #6a84a8;
+  --line: #24385a;
+  --accent: #5ee1c9;
+  --glow: rgba(94, 225, 201, 0.35);
+  --hover: rgba(94, 225, 201, 0.1);
+}
+
+:root[data-theme='mac'] {
+  color-scheme: light;
+  --bg: #e8e8e8;
+  --fg: #111111;
+  --dim: #707070;
+  --line: #b0b0b0;
+  --accent: #1a3fd1;
+  --glow: transparent;
+  --hover: rgba(0, 0, 0, 0.06);
+  --danger: #c0261d;
+  --scan: transparent;
+}
+
+/* rem units drive all sizing, so scale the root per font to keep widths sane */
+:root[data-font='plex'] {
+  --font: 'IBM Plex Mono', monospace;
+  line-height: 1.4;
+}
+
+:root[data-font='vt323'] {
+  --font: 'VT323', monospace;
+  font-size: 20px;
+  line-height: 1.15;
+}
+
+:root[data-font='pixel'] {
+  --font: 'Press Start 2P', monospace;
+  font-size: 11px;
+  line-height: 1.8;
 }

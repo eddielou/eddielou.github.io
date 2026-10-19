@@ -1,202 +1,802 @@
 [
-"Radiohead – Kid A",
-"Kanye West – My Beautiful Dark Twisted Fantasy",
-"Frank Ocean – Blonde",
-"Radiohead – In Rainbows",
-"Arcade Fire – Funeral",
-"Kendrick Lamar – To Pimp a Butterfly",
-"Beyoncé – Lemonade",
-"The Strokes – Is This It",
-"Outkast – Stankonia",
-"Outkast – Speakerboxxx/The Love Below",
-"Kendrick Lamar – good kid, m.A.A.d city",
-"Fleet Foxes – Fleet Foxes",
-"Bon Iver – For Emma, Forever Ago",
-"Sufjan Stevens – Illinois",
-"Sufjan Stevens – Carrie & Lowell",
-"LCD Soundsystem – Sound of Silver",
-"Vampire Weekend – Vampire Weekend",
-"Vampire Weekend – Modern Vampires of the City",
-"Animal Collective – Merriweather Post Pavilion",
-"Janelle Monáe – The ArchAndroid",
-"Frank Ocean – Channel Orange",
-"Lorde – Pure Heroine",
-"Lana Del Rey – Norman Fucking Rockwell!",
-"Lana Del Rey – Born to Die",
-"Taylor Swift – folklore",
-"Taylor Swift – 1989",
-"Taylor Swift – Red",
-"Phoebe Bridgers – Punisher",
-"Big Thief – Two Hands",
-"Big Thief – Dragon New Warm Mountain I Believe in You",
-"Mitski – Be the Cowboy",
-"Mitski – Puberty 2",
-"Japanese Breakfast – Jubilee",
-"Japanese Breakfast – Psychopomp",
-"Tame Impala – Currents",
-"Tame Impala – Lonerism",
-"Daft Punk – Discovery",
-"Daft Punk – Random Access Memories",
-"Kanye West – Graduation",
-"Kanye West – The College Dropout",
-"Kanye West – Late Registration",
-"Kanye West – Yeezus",
-"Jay-Z – The Blueprint",
-"Amy Winehouse – Back to Black",
-"Adele – 21",
-"Beyoncé – Beyoncé",
-"Beyoncé – Renaissance",
-"Rihanna – Anti",
-"Solange – A Seat at the Table",
-"Solange – When I Get Home",
-"SZA – Ctrl",
-"Tyler, the Creator – IGOR",
-"Tyler, the Creator – Flower Boy",
-"Childish Gambino – Awaken, My Love!",
-"Childish Gambino – Because the Internet",
-"Chance the Rapper – Coloring Book",
-"Vince Staples – Summertime '06",
-"Run the Jewels – Run the Jewels 2",
-"Danny Brown – Atrocity Exhibition",
-"Danny Brown – XXX",
-"Death Grips – The Money Store",
-"Kendrick Lamar – DAMN.",
-"Kendrick Lamar – Mr. Morale & the Big Steppers",
-"J. Cole – 2014 Forest Hills Drive",
-"Drake – Take Care",
-"Drake – Nothing Was the Same",
-"Travis Scott – Astroworld",
-"Kid Cudi – Man on the Moon: The End of Day",
-"Lil Wayne – Tha Carter III",
-"Lil Wayne – Tha Carter II",
-"Gucci Mane – Trap God",
-"Future – DS2",
-"Young Thug – Barter 6",
-"Playboi Carti – Whole Lotta Red",
-"Megan Thee Stallion – Good News",
-"Cardi B – Invasion of Privacy",
-"Nicki Minaj – Pink Friday",
-"Missy Elliott – Under Construction",
-"Lauryn Hill – The Miseducation of Lauryn Hill",
-"D'Angelo – Voodoo",
-"Erykah Badu – Mama's Gun",
-"Erykah Badu – New Amerykah Part One",
-"Jill Scott – Who Is Jill Scott?",
-"Alicia Keys – Songs in A Minor",
-"Usher – Confessions",
-"Justin Timberlake – FutureSex/LoveSounds",
-"Britney Spears – Blackout",
-"Robyn – Body Talk",
-"Robyn – Honey",
-"Carly Rae Jepsen – Emotion",
-"Charli XCX – Brat",
-"Charli XCX – How I'm Feeling Now",
-"Chappell Roan – The Rise and Fall of a Midwest Princess",
-"Sabrina Carpenter – Short n' Sweet",
-"Billie Eilish – When We All Fall Asleep, Where Do We Go?",
-"Olivia Rodrigo – SOUR",
-"Olivia Rodrigo – GUTS",
-"Lizzo – Cuz I Love You",
-"Dua Lipa – Future Nostalgia",
-"Harry Styles – Fine Line",
-"The Weeknd – After Hours",
-"The Weeknd – House of Balloons",
-"Lady Gaga – The Fame Monster",
-"Lady Gaga – Born This Way",
-"Katy Perry – Teenage Dream",
-"Kelly Clarkson – Breakaway",
-"Amy Winehouse – Frank",
-"M.I.A. – Kala",
-"M.I.A. – Arular",
-"Santigold – Santigold",
-"Grimes – Visions",
-"Grimes – Art Angels",
-"Björk – Vespertine",
-"Björk – Homogenic",
-"Björk – Vulnicura",
-"Fiona Apple – Fetch the Bolt Cutters",
-"Fiona Apple – When the Pawn…",
-"Joanna Newsom – Ys",
-"Joanna Newsom – Have One on Me",
-"St. Vincent – St. Vincent",
-"St. Vincent – Strange Mercy",
-"Feist – The Reminder",
-"Regina Spektor – Begin to Hope",
-"Florence + the Machine – Lungs",
-"Florence + the Machine – Ceremonials",
-"The xx – xx",
-"The xx – Coexist",
-"Alt-J – An Awesome Wave",
-"Foals – Total Life Forever",
-"Foals – Holy Fire",
-"Arctic Monkeys – Whatever People Say I Am, That's What I'm Not",
-"Arctic Monkeys – AM",
-"Arctic Monkeys – Favourite Worst Nightmare",
-"Franz Ferdinand – Franz Ferdinand",
-"Interpol – Turn On the Bright Lights",
-"Yeah Yeah Yeahs – Fever to Tell",
-"Yeah Yeah Yeahs – It's Blitz!",
-"The National – Boxer",
-"The National – High Violet",
-"The National – Alligator",
-"Wilco – Yankee Hotel Foxtrot",
-"Spoon – Gimme Fiction",
-"Spoon – Kill the Moonlight",
-"Modest Mouse – Good News for People Who Love Bad News",
-"Death Cab for Cutie – Transatlanticism",
-"The Shins – Oh, Inverted World",
-"The Shins – Wincing the Night Away",
-"Belle and Sebastian – Dear Catastrophe Waitress",
-"Neutral Milk Hotel – In the Aeroplane Over the Sea",
-"Cat Power – The Greatest",
-"Iron & Wine – The Shepherd's Dog",
-"Grizzly Bear – Veckatimest",
-"Beach House – Teen Dream",
-"Beach House – Bloom",
-"Beach House – Depression Cherry",
-"Deerhunter – Halcyon Digest",
-"Deerhunter – Microcastle",
-"Real Estate – Days",
-"Mac DeMarco – Salad Days",
-"Mac DeMarco – 2",
-"Kurt Vile – Smoke Ring for My Halo",
-"War on Drugs – Lost in the Dream",
-"War on Drugs – A Deeper Understanding",
-"Courtney Barnett – Sometimes I Sit and Think, and Sometimes I Just Sit",
-"Angel Olsen – Burn Your Fire for No Witness",
-"Angel Olsen – My Woman",
-"Sharon Van Etten – Are We There",
-"Julien Baker – Sprained Ankle",
-"boygenius – the record",
-"Lucy Dacus – Home Video",
-"Snail Mail – Lush",
-"Soccer Mommy – Clean",
-"Clairo – Immunity",
-"Clairo – Sling",
-"Rina Sawayama – Sawayama",
-"Caroline Polachek – Pang",
-"Caroline Polachek – Desire, I Want to Turn Into You",
-"FKA twigs – LP1",
-"FKA twigs – MAGDALENE",
-"Jessie Ware – What's Your Pleasure?",
-"Arca – Arca",
-"James Blake – James Blake",
-"James Blake – Overgrown",
-"Burial – Untrue",
-"Jamie xx – In Colour",
-"Four Tet – There Is Love in You",
-"Caribou – Swim",
-"Caribou – Our Love",
-"Bonobo – Black Sands",
-"Flying Lotus – Cosmogramma",
-"Flying Lotus – You're Dead!",
-"Thundercat – Drunk",
-"Kamasi Washington – The Epic",
-"Anderson .Paak – Malibu",
-"Kacey Musgraves – Golden Hour",
-"Kacey Musgraves – Same Trailer Different Park",
-"Sturgill Simpson – A Sailor's Guide to Earth",
-"Jason Isbell – Southeastern",
-"Jason Isbell – Something More Than Free",
-"Brandi Carlile – By the Way, I Forgive You"
+{
+"text": "Radiohead — Kid A",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/bd/8e/13/bd8e1358-b367-a689-cb84-cebd0b067dc4/634904078263.png/300x300bb.jpg"
+},
+{
+"text": "Kanye West — My Beautiful Dark Twisted Fantasy",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/37/da/7c/37da7cc5-2b6f-9bb8-30ba-8a8c3be3e16a/00602527584973.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Frank Ocean — Blonde",
+"img": null
+},
+{
+"text": "Radiohead — In Rainbows",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/dd/50/c7/dd50c790-99ac-d3d0-5ab8-e3891fb8fd52/634904032463.png/300x300bb.jpg"
+},
+{
+"text": "Arcade Fire — Funeral",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/2b/09/6e/2b096e8c-ae65-fc42-a4b1-19abb4100433/886446576442.jpg/300x300bb.jpg"
+},
+{
+"text": "Kendrick Lamar — To Pimp a Butterfly",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/b5/a6/91/b5a69171-5232-3d5b-9c15-8963802f83dd/15UMGIM15814.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Beyoncé — Lemonade",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/3b/3c/65/3b3c6590-55e0-9a55-2e1d-96af51343117/886447691168.jpg/300x300bb.jpg"
+},
+{
+"text": "The Strokes — Is This It",
+"img": null
+},
+{
+"text": "Outkast — Stankonia",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/d6/21/fb/d621fbde-c099-6794-7102-2692f10c4dbb/886448814283.jpg/300x300bb.jpg"
+},
+{
+"text": "Outkast — Speakerboxxx/The Love Below",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/71/ae/6a/71ae6a46-99a6-e9d8-d7f3-41c0f2df45c4/196872579123.jpg/300x300bb.jpg"
+},
+{
+"text": "Kendrick Lamar — good kid, m.A.A.d city",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/36/86/ec/3686ec99-dec4-0a01-8b74-2d8a9a0263a7/12UMGIM52988.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Fleet Foxes — Fleet Foxes",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/b5/13/5d/b5135d6b-97e1-19cb-4234-5f711b77972e/098787077766.png/300x300bb.jpg"
+},
+{
+"text": "Bon Iver — For Emma, Forever Ago",
+"img": null
+},
+{
+"text": "Sufjan Stevens — Illinois",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/47/9e/a3/479ea382-2686-3ea9-3def-d67d81fb2ee3/mzi.lhtprasx.jpg/300x300bb.jpg"
+},
+{
+"text": "Sufjan Stevens — Carrie & Lowell",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music91/v4/6b/20/6a/6b206ac1-e1b5-316d-334d-59df7b727fb6/656605613666.jpg/300x300bb.jpg"
+},
+{
+"text": "LCD Soundsystem — Sound of Silver",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/fb/fe/a5/fbfea51a-0130-d557-c1f4-9e5e98b7bab8/094638511359.jpg/300x300bb.jpg"
+},
+{
+"text": "Vampire Weekend — Vampire Weekend",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/b2/c7/94/b2c79469-1105-1a37-c092-5f889f6ed15a/634904055653.png/300x300bb.jpg"
+},
+{
+"text": "Vampire Weekend — Modern Vampires of the City",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/b2/c7/94/b2c79469-1105-1a37-c092-5f889f6ed15a/634904055653.png/300x300bb.jpg"
+},
+{
+"text": "Animal Collective — Merriweather Post Pavilion",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/64/79/67/64796709-9482-2221-b1b7-64cdbe1b99f2/dj.fuppzyzi.jpg/300x300bb.jpg"
+},
+{
+"text": "Janelle Monáe — The ArchAndroid",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/9f/12/48/9f124811-b7e8-3312-a27f-b54a553cc644/mzi.rndulspu.jpg/300x300bb.jpg"
+},
+{
+"text": "Frank Ocean — Channel Orange",
+"img": null
+},
+{
+"text": "Lorde — Pure Heroine",
+"img": null
+},
+{
+"text": "Lana Del Rey — Norman Fucking Rockwell!",
+"img": null
+},
+{
+"text": "Lana Del Rey — Born to Die",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/59/10/66/591066ea-3c85-3dfe-ef82-ffdbbcdfc8b9/12UMGIM00033.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Taylor Swift — folklore",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/8c/ef/c2/8cefc23a-61b7-05ff-b52a-bb1e4922087c/20UMGIM64216.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Taylor Swift — 1989",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/8e/35/6c/8e356cc2-0be4-b83b-d29e-b578623df2ac/23UM1IM34052.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Taylor Swift — Red",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/25/0d/7e/250d7e42-3a2f-19ac-f865-f1e04a4a1f97/12UMDIM01007.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Phoebe Bridgers — Punisher",
+"img": null
+},
+{
+"text": "Big Thief — Two Hands",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/44/1e/68/441e686c-9276-b50c-ad68-f7d3e2d53b38/cover.jpg/300x300bb.jpg"
+},
+{
+"text": "Big Thief — Dragon New Warm Mountain I Believe in You",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/14/c8/ea/14c8ea65-2155-8d44-f0c5-6faa8f51f95d/191400040878.png/300x300bb.jpg"
+},
+{
+"text": "Mitski — Be the Cowboy",
+"img": null
+},
+{
+"text": "Mitski — Puberty 2",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/9a/86/ed/9a86ed4e-fcd6-2c89-3229-2062173e120d/66100.jpg/300x300bb.jpg"
+},
+{
+"text": "Japanese Breakfast — Jubilee",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/93/8b/8b/938b8b5d-1022-414f-995e-a25608fc68c3/17251.jpg/300x300bb.jpg"
+},
+{
+"text": "Japanese Breakfast — Psychopomp",
+"img": null
+},
+{
+"text": "Tame Impala — Currents",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/64/48/5c/64485cc9-968c-68cc-764e-9a7c71733def/00602567155454.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Tame Impala — Lonerism",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/b7/40/9b/b7409bc6-24fa-b956-5613-4be8dc62be06/12UMGIM64219.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Daft Punk — Discovery",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fd/4a/77/fd4a77db-0ebc-d043-41a2-f32fa1bb0fb4/dj.qrikkdwj.jpg/300x300bb.jpg"
+},
+{
+"text": "Daft Punk — Random Access Memories",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/e8/43/5f/e8435ffa-b6b9-b171-40ab-4ff3959ab661/886443919266.jpg/300x300bb.jpg"
+},
+{
+"text": "Kanye West — Graduation",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/39/25/2d/39252d65-2d50-b991-0962-f7a98a761271/00602517483507.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Kanye West — The College Dropout",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/15/05/09/15050911-a2f1-9ebc-0d16-6e8faad1cf80/00602567924326.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Kanye West — Late Registration",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/0e/90/3c/0e903c43-9d81-f91b-90f1-727a58f7fb2c/00602498824030.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Kanye West — Yeezus",
+"img": null
+},
+{
+"text": "Jay-Z — The Blueprint",
+"img": null
+},
+{
+"text": "Amy Winehouse — Back to Black",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/cf/3f/09/cf3f0994-980d-d8ed-088d-ae89af256b73/15UMGIM24224.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Adele — 21",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/eb/ca/25/ebca2596-cd1e-b295-91a3-771c868d0a79/191404113868.png/300x300bb.jpg"
+},
+{
+"text": "Beyoncé — Beyoncé",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Features114/v4/13/27/cf/1327cfb1-ff1c-5b53-d92b-da3b78155e00/dj.ixakzkan.jpg/300x300bb.jpg"
+},
+{
+"text": "Beyoncé — Renaissance",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/fe/ba/43/feba43be-99e8-ad8c-9fad-1bfdea7a4e98/196589344267.jpg/300x300bb.jpg"
+},
+{
+"text": "Rihanna — Anti",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/9c/da/90/9cda90c9-df1a-078b-319c-bdf2801e8d1f/16UMGIM03373.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Solange — A Seat at the Table",
+"img": null
+},
+{
+"text": "Solange — When I Get Home",
+"img": null
+},
+{
+"text": "SZA — Ctrl",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/a2/bc/ad/a2bcad46-b389-4be1-8bac-5a0959b0b8e4/886446548449.jpg/300x300bb.jpg"
+},
+{
+"text": "Tyler, the Creator — IGOR",
+"img": null
+},
+{
+"text": "Tyler, the Creator — Flower Boy",
+"img": null
+},
+{
+"text": "Childish Gambino — Awaken, My Love!",
+"img": null
+},
+{
+"text": "Childish Gambino — Because the Internet",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/6b/59/46/6b5946b3-821b-32d1-8586-1b12b3c9d3ed/0044003173453_Cover.jpg/300x300bb.jpg"
+},
+{
+"text": "Chance the Rapper — Coloring Book",
+"img": null
+},
+{
+"text": "Vince Staples — Summertime '06",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/e2/47/dc/e247dc24-8dc9-f136-16f0-b2c42f35a4c0/15UMGIM30085.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Run the Jewels — Run the Jewels 2",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/7b/44/c2/7b44c2aa-12c4-4617-9fec-8942664e640f/198704918407_Cover.jpg/300x300bb.jpg"
+},
+{
+"text": "Danny Brown — Atrocity Exhibition",
+"img": null
+},
+{
+"text": "Danny Brown — XXX",
+"img": null
+},
+{
+"text": "Death Grips — The Money Store",
+"img": null
+},
+{
+"text": "Kendrick Lamar — DAMN.",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/ab/16/ef/ab16efe9-e7f1-66ec-021c-5592a23f0f9e/17UMGIM88793.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Kendrick Lamar — Mr. Morale & the Big Steppers",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/eb/44/c9/eb44c9e1-401e-b118-6254-7b9a10888c39/22UMGIM52376.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "J. Cole — 2014 Forest Hills Drive",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/ee/28/67/ee286794-6c33-a8c2-5c37-c04f1cb5e8a6/21UM1IM54415.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Drake — Take Care",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/d2/53/62/d2536245-b94c-b3fd-7168-9512f655f6d4/00602527899091.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Drake — Nothing Was the Same",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/60/e8/d1/60e8d144-2b8e-cbdc-9ff8-beaf9f4868b1/00602537542345.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Travis Scott — Astroworld",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/e7/49/8f/e7498f65-df8f-bead-d6e3-2a8d4d642a79/886447235317.jpg/300x300bb.jpg"
+},
+{
+"text": "Kid Cudi — Man on the Moon: The End of Day",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/c5/bb/ae/c5bbae2c-68ce-4efe-e0fa-2ee8769e46f3/09UMGIM33418.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Lil Wayne — Tha Carter III",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f9/6c/dc/f96cdc5c-09fe-06b6-4629-be4afeb71cca/08UMGIM15512.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Lil Wayne — Tha Carter II",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/6e/03/50/6e035083-632f-6978-858e-5e62af8b9426/06UMGIM17277.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Gucci Mane — Trap God",
+"img": null
+},
+{
+"text": "Future — DS2",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/21/01/d0/2101d0ef-079a-974e-317a-780275f8c269/886445328547.jpg/300x300bb.jpg"
+},
+{
+"text": "Young Thug — Barter 6",
+"img": null
+},
+{
+"text": "Playboi Carti — Whole Lotta Red",
+"img": null
+},
+{
+"text": "Megan Thee Stallion — Good News",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/39/95/fa/3995fadd-0e4a-0bfc-3878-01f6f7d4f440/810043683357.jpg/300x300bb.jpg"
+},
+{
+"text": "Cardi B — Invasion of Privacy",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ca/58/e5/ca58e5e3-acb7-8ca3-6af9-ad63af3b71f1/075679873675.jpg/300x300bb.jpg"
+},
+{
+"text": "Nicki Minaj — Pink Friday",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/3f/6a/dc/3f6adcfb-4d27-303e-b964-3710c56800e3/11UMGIM13385.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Missy Elliott — Under Construction",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Features124/v4/67/63/8e/67638ee7-4bf1-5bcd-75af-0c7868c23478/dj.mzvpzeqc.jpg/300x300bb.jpg"
+},
+{
+"text": "Lauryn Hill — The Miseducation of Lauryn Hill",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/09/6b/55/096b55c4-ee8f-23bd-df8f-0ca0821f3028/886446727189.jpg/300x300bb.jpg"
+},
+{
+"text": "D'Angelo — Voodoo",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/e9/b9/9e/e9b99e73-58a5-1e31-f57c-b11e78419dcf/16UMGIM86249.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Erykah Badu — Mama's Gun",
+"img": null
+},
+{
+"text": "Erykah Badu — New Amerykah Part One",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/c7/64/27/c7642714-7f61-74c4-3109-246bd790befe/10UMGIM06657.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Jill Scott — Who Is Jill Scott?",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/b2/10/00/b21000e9-7ecf-0316-037e-1beb2b414025/00894096001788.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Alicia Keys — Songs in A Minor",
+"img": null
+},
+{
+"text": "Usher — Confessions",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/02/c6/e1/02c6e1cd-8d57-97b4-6ef1-77d2be004509/mzi.sjrqsmrq.jpg/300x300bb.jpg"
+},
+{
+"text": "Justin Timberlake — FutureSex/LoveSounds",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/4c/44/30/4c4430dd-150b-d393-ec70-4894975f4b16/888880422095.jpg/300x300bb.jpg"
+},
+{
+"text": "Britney Spears — Blackout",
+"img": null
+},
+{
+"text": "Robyn — Body Talk",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/75/1b/36/751b36a3-4af7-0a32-09ba-2bbfdf791d08/00602527588995.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Robyn — Honey",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/27/95/44/279544af-7518-e711-8210-bb173457a3fb/00602577125263.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Carly Rae Jepsen — Emotion",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/8e/b9/9b/8eb99b2a-f730-0df5-3c2c-4175d57cd84d/15UMGIM31527.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Charli XCX — Brat",
+"img": null
+},
+{
+"text": "Charli XCX — How I'm Feeling Now",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/1a/5c/e9/1a5ce93c-aef4-6667-b7d1-7162203e1c39/190295229993.jpg/300x300bb.jpg"
+},
+{
+"text": "Chappell Roan — The Rise and Fall of a Midwest Princess",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/42/a0/c5/42a0c5e6-6b98-f1f9-7d6b-6d6c61aba562/23UMGIM84225.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Sabrina Carpenter — Short n' Sweet",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a1/1c/ca/a11ccab6-7d4c-e041-d028-998bcebeb709/24UMGIM61704.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Billie Eilish — When We All Fall Asleep, Where Do We Go?",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/1a/37/d1/1a37d1b1-8508-54f2-f541-bf4e437dda76/19UMGIM05028.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Olivia Rodrigo — SOUR",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/02/ed/8c/02ed8cab-c089-2fdd-7ce6-ab334a9a4e19/21UMGIM26093.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Olivia Rodrigo — GUTS",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/9e/0d/17/9e0d17e0-c068-fbd9-fd85-610cc87c86aa/23UMGIM71511.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Lizzo — Cuz I Love You",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ca/6f/0f/ca6f0f23-358c-3d23-360f-20cc1f5ce8fd/075679824615.jpg/300x300bb.jpg"
+},
+{
+"text": "Dua Lipa — Future Nostalgia",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/e9/c5/a8/e9c5a8a0-d698-137b-2e85-cf3a8d9548f8/190295303372.jpg/300x300bb.jpg"
+},
+{
+"text": "Harry Styles — Fine Line",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/2b/c4/c9/2bc4c9d4-3bc6-ab13-3f71-df0b89b173de/886448022213.jpg/300x300bb.jpg"
+},
+{
+"text": "The Weeknd — After Hours",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/2b/b9/fe/2bb9fef5-d7f3-8345-25a9-db0e79fde4e4/20UMGIM11048.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "The Weeknd — House of Balloons",
+"img": null
+},
+{
+"text": "Lady Gaga — The Fame Monster",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/e9/1a/4e/e91a4eb9-31e7-89fb-3aad-e8172e534bb6/09UMGIM42295.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Lady Gaga — Born This Way",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/53/00/7f/53007fa9-9b02-1fdb-290a-b0ca791a8c98/11UMGIM12477.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Katy Perry — Teenage Dream",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/7c/cb/c1/7ccbc1a3-9476-8f85-3c14-4e7e91f67f25/13UABIM57788.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Kelly Clarkson — Breakaway",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/e3/7e/c5/e37ec5d7-725b-695c-333c-ee0deb5adcc6/dj.mveioodu.jpg/300x300bb.jpg"
+},
+{
+"text": "Amy Winehouse — Frank",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/21/c0/14/21c0145f-5277-bf9b-6f18-44d8ef5ae11d/15UMGIM31140.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "M.I.A. — Kala",
+"img": null
+},
+{
+"text": "M.I.A. — Arular",
+"img": null
+},
+{
+"text": "Santigold — Santigold",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Features114/v4/00/89/ab/0089ab23-4061-0b81-eb19-0ae5a01cd5b9/dj.lfccekgv.jpg/300x300bb.jpg"
+},
+{
+"text": "Grimes — Visions",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/46/fd/9f/46fd9fae-a71e-ff3b-2d00-21908ad40e1e/803680478226.jpg/300x300bb.jpg"
+},
+{
+"text": "Grimes — Art Angels",
+"img": null
+},
+{
+"text": "Björk — Vespertine",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/32/d6/28/32d62861-0e24-2111-d3ed-3b54f23083d5/081227607265.jpg/300x300bb.jpg"
+},
+{
+"text": "Björk — Homogenic",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/12/38/d0/1238d076-0a43-5758-1876-5ab6d256d648/5016958995157.png/300x300bb.jpg"
+},
+{
+"text": "Björk — Vulnicura",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/b6/eb/ab/b6ebabd8-9ad6-f3f7-e12d-2121daa10b8d/3614590872625.png/300x300bb.jpg"
+},
+{
+"text": "Fiona Apple — Fetch the Bolt Cutters",
+"img": null
+},
+{
+"text": "Fiona Apple — When the Pawn…",
+"img": null
+},
+{
+"text": "Joanna Newsom — Ys",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/85/a1/a2/85a1a29f-7a03-0c8a-ce4c-3a57e0213413/781484030324.png/300x300bb.jpg"
+},
+{
+"text": "Joanna Newsom — Have One on Me",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/6d/fc/5f/6dfc5f8a-0d71-2920-c79c-9484ab06a1d2/781484039020.png/300x300bb.jpg"
+},
+{
+"text": "St. Vincent — St. Vincent",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/00/71/3d/00713dc5-6764-2152-7e5c-60bc3ff2ab79/19UM1IM04721.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "St. Vincent — Strange Mercy",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/e6/87/65/e687653d-686c-5333-0596-17e9534c4a9e/652637312362.png/300x300bb.jpg"
+},
+{
+"text": "Feist — The Reminder",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/cc/f4/46/ccf44641-40d8-018d-1bb2-e86ed8b7beeb/00602547820976.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Regina Spektor — Begin to Hope",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Features115/v4/ea/85/c6/ea85c665-dfb6-ec9c-02a9-9ed049f4c37f/dj.chuckgip.jpg/300x300bb.jpg"
+},
+{
+"text": "Florence + the Machine — Lungs",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/4d/b6/73/4db6730b-ffb5-2147-c374-05edec48c7d0/10UMGIM04103.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Florence + the Machine — Ceremonials",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/43/d5/9e/43d59e0c-6a9e-7f1a-e41d-badced2f40b4/11UMGIM28690.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "The xx — xx",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/59/df/6b/59df6bec-17f5-b578-aee2-b1a772d2ab9b/889030044761.png/300x300bb.jpg"
+},
+{
+"text": "The xx — Coexist",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/57/81/34/5781340f-df6f-7f35-e24e-94ba71895d6e/634904608064.png/300x300bb.jpg"
+},
+{
+"text": "Alt-J — An Awesome Wave",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/14/ce/32/14ce329f-ce30-569a-725b-1b2feefdcdfc/075679959959.jpg/300x300bb.jpg"
+},
+{
+"text": "Foals — Total Life Forever",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/86/91/9c/86919c62-e914-214e-ee6a-21c670a1bec5/098787087567.png/300x300bb.jpg"
+},
+{
+"text": "Foals — Holy Fire",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music6/v4/bf/bb/9b/bfbb9b82-0d56-042d-2934-154db5d6e810/825646427796.jpg/300x300bb.jpg"
+},
+{
+"text": "Arctic Monkeys — Whatever People Say I Am, That's What I'm Not",
+"img": null
+},
+{
+"text": "Arctic Monkeys — AM",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/69/9c/b5/699cb5d6-115c-ff73-9d26-e57ea4350d72/887828031795.png/300x300bb.jpg"
+},
+{
+"text": "Arctic Monkeys — Favourite Worst Nightmare",
+"img": null
+},
+{
+"text": "Franz Ferdinand — Franz Ferdinand",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/83/c6/54/83c6541f-3b90-b46a-b46a-17bf8fd9af16/5034202113645.png/300x300bb.jpg"
+},
+{
+"text": "Interpol — Turn On the Bright Lights",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/be/ef/aa/beefaad1-64ba-1288-d2ce-95a5964a020b/744861054566.png/300x300bb.jpg"
+},
+{
+"text": "Yeah Yeah Yeahs — Fever to Tell",
+"img": null
+},
+{
+"text": "Yeah Yeah Yeahs — It's Blitz!",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/97/1f/5c/971f5c92-2def-b4cb-a76e-bc582a396ce3/09UMGIM02469.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "The National — Boxer",
+"img": null
+},
+{
+"text": "The National — High Violet",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/75/1e/5e/751e5e63-f9f4-de93-b6b0-75578f47aced/652637300369.png/300x300bb.jpg"
+},
+{
+"text": "The National — Alligator",
+"img": null
+},
+{
+"text": "Wilco — Yankee Hotel Foxtrot",
+"img": null
+},
+{
+"text": "Spoon — Gimme Fiction",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/f0/80/47/f0804739-9687-fd37-7167-07cb42cfa6c5/744861066064.png/300x300bb.jpg"
+},
+{
+"text": "Spoon — Kill the Moonlight",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/b6/81/14/b6811493-0983-809f-419a-ff29778dc8a3/191401149464.png/300x300bb.jpg"
+},
+{
+"text": "Modest Mouse — Good News for People Who Love Bad News",
+"img": null
+},
+{
+"text": "Death Cab for Cutie — Transatlanticism",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/49/e7/3a/49e73a89-7a90-77be-f8e9-868cd81ba7ca/103121.jpg/300x300bb.jpg"
+},
+{
+"text": "The Shins — Oh, Inverted World",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music/y2003/m10/d20/h21/s05.lcrggtrf.jpg/300x300bb.jpg"
+},
+{
+"text": "The Shins — Wincing the Night Away",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/79/b0/5f/79b05fca-d8d8-2029-84ca-8348bb5c8e23/TheShins_WincingTheNightAway_1425px.jpg/300x300bb.jpg"
+},
+{
+"text": "Belle and Sebastian — Dear Catastrophe Waitress",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/d1/63/9c/d1639c8e-d39b-5abc-b731-1c02a5060ea5/744861106562.png/300x300bb.jpg"
+},
+{
+"text": "Neutral Milk Hotel — In the Aeroplane Over the Sea",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/12/e3/5c/12e35c39-de5c-b501-3ef0-00f19fb3d513/56627.jpg/300x300bb.jpg"
+},
+{
+"text": "Cat Power — The Greatest",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/a4/06/c0/a406c07e-2306-ff92-7ddd-0dc79eeea4c6/744861074366.png/300x300bb.jpg"
+},
+{
+"text": "Iron & Wine — The Shepherd's Dog",
+"img": null
+},
+{
+"text": "Grizzly Bear — Veckatimest",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music/4e/10/fe/mzi.rxsrrqqz.jpg/300x300bb.jpg"
+},
+{
+"text": "Beach House — Teen Dream",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/d2/0c/e5/d20ce58d-27dc-a429-a4c2-41096d901ee6/mzi.ixtppvys.jpg/300x300bb.jpg"
+},
+{
+"text": "Beach House — Bloom",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/8b/b7/08/8bb7086b-cdb5-1ffe-926b-e7637bda6a0d/BeachHouse_Bloom_iTunes.jpg/300x300bb.jpg"
+},
+{
+"text": "Beach House — Depression Cherry",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/09/e0/d5/09e0d559-0682-f0f0-5e0c-3cd11e3114fd/beachhouse_depressioncherry_2400_300.jpg/300x300bb.jpg"
+},
+{
+"text": "Deerhunter — Halcyon Digest",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/c8/93/80/c8938060-b785-3f40-5cc5-6464265f10d6/652637303865.png/300x300bb.jpg"
+},
+{
+"text": "Deerhunter — Microcastle",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Features/8b/f8/64/dj.kdtacxwe.jpg/300x300bb.jpg"
+},
+{
+"text": "Real Estate — Days",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music/aa/b6/f2/mzi.loqltsis.jpg/300x300bb.jpg"
+},
+{
+"text": "Mac DeMarco — Salad Days",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e0/04/eb/e004eb2b-754f-4a76-9ecc-87d4eea2a327/cover.jpg/300x300bb.jpg"
+},
+{
+"text": "Mac DeMarco — 2",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a9/ca/9c/a9ca9c83-4b8f-090e-0bb8-5e6b1e5eebfd/cover.jpg/300x300bb.jpg"
+},
+{
+"text": "Kurt Vile — Smoke Ring for My Halo",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/31/e9/33/31e933fa-17bd-7446-3278-dabd1df2a516/744861093855.png/300x300bb.jpg"
+},
+{
+"text": "War on Drugs — Lost in the Dream",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/3b/e7/98/3be79889-aea5-5139-5330-3cbe1b364ef3/656605031064.jpg/300x300bb.jpg"
+},
+{
+"text": "War on Drugs — A Deeper Understanding",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/a7/58/ea/a758ea6b-866e-302c-668a-bad3aa2cf32e/075679893109.jpg/300x300bb.jpg"
+},
+{
+"text": "Courtney Barnett — Sometimes I Sit and Think, and Sometimes I Just Sit",
+"img": null
+},
+{
+"text": "Angel Olsen — Burn Your Fire for No Witness",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/e6/8e/55/e68e55b1-14f6-5066-c606-13832ffffae7/656605224497.jpg/300x300bb.jpg"
+},
+{
+"text": "Angel Olsen — My Woman",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/28/e9/d8/28e9d80b-a026-63aa-818d-f02afb2e5532/656605228464.jpg/300x300bb.jpg"
+},
+{
+"text": "Sharon Van Etten — Are We There",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music6/v4/e4/cc/15/e4cc1555-10ac-c29e-970d-69e24126c854/656605225562.jpg/300x300bb.jpg"
+},
+{
+"text": "Julien Baker — Sprained Ankle",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/86/84/8f/86848f96-5152-1a8c-7675-54d1c795b358/122282.jpg/300x300bb.jpg"
+},
+{
+"text": "boygenius — the record",
+"img": null
+},
+{
+"text": "Lucy Dacus — Home Video",
+"img": null
+},
+{
+"text": "Snail Mail — Lush",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/e3/f0/b8/e3f0b8b0-88c4-58df-a148-d4714d4fe7dc/744861117957.png/300x300bb.jpg"
+},
+{
+"text": "Soccer Mommy — Clean",
+"img": null
+},
+{
+"text": "Clairo — Immunity",
+"img": null
+},
+{
+"text": "Clairo — Sling",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/8d/2d/26/8d2d263f-9a28-0e61-2eba-25ebcce35a8d/21UMGIM42676.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Rina Sawayama — Sawayama",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/a4/e3/59/a4e35927-fb65-c4e6-d78a-fb790a6ca178/196922553080_Cover.jpg/300x300bb.jpg"
+},
+{
+"text": "Caroline Polachek — Pang",
+"img": null
+},
+{
+"text": "Caroline Polachek — Desire, I Want to Turn Into You",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/10/51/f2/1051f2cc-195f-ddb6-2d9e-26c74f0387fd/197187988518.jpg/300x300bb.jpg"
+},
+{
+"text": "FKA twigs — LP1",
+"img": null
+},
+{
+"text": "FKA twigs — MAGDALENE",
+"img": null
+},
+{
+"text": "Jessie Ware — What's Your Pleasure?",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/c9/3f/d9/c93fd9fd-dc20-e051-0a58-b8799c5acde4/21UMGIM06864.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Arca — Arca",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/5f/be/33/5fbe33cc-f182-8909-1b0f-1c6b43abc77f/cover.jpg/300x300bb.jpg"
+},
+{
+"text": "James Blake — James Blake",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/c4/6b/7c/c46b7cd6-8514-2098-7efa-83790c3d4879/00602527614854.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "James Blake — Overgrown",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/2a/d7/d8/2ad7d8cd-2ab6-d08c-5490-2704c10ca2bc/00602537351374.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Burial — Untrue",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/9d/0f/1c/9d0f1c2b-2fae-d8ac-3920-ce9ec5bc85b5/7982.jpg/300x300bb.jpg"
+},
+{
+"text": "Jamie xx — In Colour",
+"img": null
+},
+{
+"text": "Four Tet — There Is Love in You",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/a3/f1/79/a3f17926-28ca-c3a2-6487-77595e677376/5034202025450_cover.jpg/300x300bb.jpg"
+},
+{
+"text": "Caribou — Swim",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/91/b6/91/91b69135-0d13-3d84-e3bd-533872173a42/35057.jpg/300x300bb.jpg"
+},
+{
+"text": "Caribou — Our Love",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e1/a7/10/e1a71039-67b3-faf9-df5e-5a2b90fad741/56555.jpg/300x300bb.jpg"
+},
+{
+"text": "Bonobo — Black Sands",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/c1/bf/c2/c1bfc295-9310-5e5d-0322-7deee6dd4128/5021392584195.png/300x300bb.jpg"
+},
+{
+"text": "Flying Lotus — Cosmogramma",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/f8/3f/5f/f83f5f67-f8d6-626a-ae9a-3f16c5b0af5d/0801061019532.png/300x300bb.jpg"
+},
+{
+"text": "Flying Lotus — You're Dead!",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/7e/c9/d2/7ec9d2f9-5979-0482-70b6-15a98e856d2c/WARP256_Packshot_RGB_2500.jpg/300x300bb.jpg"
+},
+{
+"text": "Thundercat — Drunk",
+"img": null
+},
+{
+"text": "Kamasi Washington — The Epic",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music3/v4/ee/f3/42/eef342b0-6024-1bb3-15db-426aa5ee1eb8/kw_1400.jpg/300x300bb.jpg"
+},
+{
+"text": "Anderson .Paak — Malibu",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/32/04/f0/3204f09c-4580-3880-7f5f-254dfa4d258f/888915184455_cover.jpg/300x300bb.jpg"
+},
+{
+"text": "Kacey Musgraves — Golden Hour",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/61/45/e8/6145e88a-6a79-fab1-ad8f-5ffdcbf44a28/18UMGIM03879.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Kacey Musgraves — Same Trailer Different Park",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/70/c5/44/70c5447f-dd7a-26b3-eb65-4908b185b3ef/13UMGIM04596.rgb.jpg/300x300bb.jpg"
+},
+{
+"text": "Sturgill Simpson — A Sailor's Guide to Earth",
+"img": null
+},
+{
+"text": "Jason Isbell — Southeastern",
+"img": null
+},
+{
+"text": "Jason Isbell — Something More Than Free",
+"img": null
+},
+{
+"text": "Brandi Carlile — By the Way, I Forgive You",
+"img": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/de/fb/dc/defbdc21-b070-7958-289f-13afa90186c2/075679885449.jpg/300x300bb.jpg"
+}
 ]

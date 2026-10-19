@@ -1,252 +1,1002 @@
 [
-"The Shawshank Redemption (1994)",
-"The Godfather (1972)",
-"The Dark Knight (2008)",
-"The Godfather Part II (1974)",
-"The Lord of the Rings: The Return of the King (2003)",
-"12 Angry Men (1957)",
-"Schindler's List (1993)",
-"The Lord of the Rings: The Fellowship of the Ring (2001)",
-"Pulp Fiction (1994)",
-"The Lord of the Rings: The Two Towers (2002)",
-"The Good, the Bad and the Ugly (1966)",
-"Forrest Gump (1994)",
-"Inception (2010)",
-"Fight Club (1999)",
-"Star Wars: Episode V - The Empire Strikes Back (1980)",
-"The Matrix (1999)",
-"Interstellar (2014)",
-"GoodFellas (1990)",
-"One Flew Over the Cuckoo's Nest (1975)",
-"Seven (1995)",
-"It's a Wonderful Life (1946)",
-"The Silence of the Lambs (1991)",
-"Saving Private Ryan (1998)",
-"Seven Samurai (1954)",
-"The Green Mile (1999)",
-"City of God (2002)",
-"Life Is Beautiful (1997)",
-"Terminator 2: Judgment Day (1991)",
-"Back to the Future (1985)",
-"Star Wars: Episode IV - A New Hope (1977)",
-"Spirited Away (2001)",
-"Gladiator (2000)",
-"The Pianist (2002)",
-"Kill Bill: The Whole Bloody Affair (2004)",
-"Parasite (2019)",
-"Grave of the Fireflies (1988)",
-"Harakiri (1962)",
-"The Lion King (1994)",
-"Psycho (1960)",
-"The Departed (2006)",
-"Whiplash (2014)",
-"The Prestige (2006)",
-"American History X (1998)",
-"Spider-Man: Across the Spider-Verse (2023)",
-"Cinema Paradiso (1988)",
-"Léon: The Professional (1994)",
-"Casablanca (1942)",
-"The Intouchables (2011)",
-"The Usual Suspects (1995)",
-"Django Unchained (2012)",
-"Alien (1979)",
-"Rear Window (1954)",
-"Modern Times (1936)",
-"Once Upon a Time in the West (1968)",
-"WALL·E (2008)",
-"City Lights (1931)",
-"Apocalypse Now (1979)",
-"Memento (2000)",
-"Avengers: Infinity War (2018)",
-"Dune: Part Two (2024)",
-"Raiders of the Lost Ark (1981)",
-"Spider-Man: Into the Spider-Verse (2018)",
-"The Odyssey (2026)",
-"The Lives of Others (2006)",
-"Sunset Boulevard (1950)",
-"Witness for the Prosecution (1957)",
-"Paths of Glory (1957)",
-"Inglourious Basterds (2009)",
-"The Shining (1980)",
-"The Great Dictator (1940)",
-"Aliens (1986)",
-"High and Low (1963)",
-"12th Fail (2023)",
-"Avengers: Endgame (2019)",
-"Good Will Hunting (1997)",
-"Coco (2017)",
-"Toy Story (1995)",
-"The Dark Knight Rises (2012)",
-"Amadeus (1984)",
-"Your Name. (2016)",
-"3 Idiots (2009)",
-"Braveheart (1995)",
-"Das Boot (1981)",
-"Princess Mononoke (1997)",
-"Oldboy (2003)",
-"Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1964)",
-"American Beauty (1999)",
-"Capernaum (2018)",
-"Attack on Titan: The Last Attack (2024)",
-"Singin' in the Rain (1952)",
-"Once Upon a Time in America (1984)",
-"Joker (2019)",
-"Toy Story 3 (2010)",
-"Star Wars: Episode VI - Return of the Jedi (1983)",
-"Come and See (1985)",
-"Requiem for a Dream (2000)",
-"Incendies (2010)",
-"Ikiru (1952)",
-"The Hunt (2012)",
-"Eternal Sunshine of the Spotless Mind (2004)",
-"The Apartment (1960)",
-"Lawrence of Arabia (1962)",
-"Heat (1995)",
-"Scarface (1983)",
-"Reservoir Dogs (1992)",
-"Up (2009)",
-"2001: A Space Odyssey (1968)",
-"Double Indemnity (1944)",
-"Like Stars on Earth (2007)",
-"North by Northwest (1959)",
-"Full Metal Jacket (1987)",
-"I Swear (2025)",
-"A Separation (2011)",
-"Die Hard (1988)",
-"M (1931)",
-"Amélie (2001)",
-"To Kill a Mockingbird (1962)",
-"Indiana Jones and the Last Crusade (1989)",
-"Vertigo (1958)",
-"Citizen Kane (1941)",
-"The Sting (1973)",
-"A Clockwork Orange (1971)",
-"Metropolis (1927)",
-"The Truman Show (1998)",
-"The Wolf of Wall Street (2013)",
-"1917 (2019)",
-"Snatch (2000)",
-"Shutter Island (2010)",
-"Downfall (2004)",
-"L.A. Confidential (1997)",
-"Green Book (2018)",
-"Dangal (2016)",
-"Bicycle Thieves (1948)",
-"Woman in the Dunes (1964)",
-"Judgment at Nuremberg (1961)",
-"Jurassic Park (1993)",
-"Batman Begins (2005)",
-"Oppenheimer (2023)",
-"For a Few Dollars More (1965)",
-"Hamilton (2020)",
-"There Will Be Blood (2007)",
-"Some Like It Hot (1959)",
-"Taxi Driver (1976)",
-"The Father (2020)",
-"The Sixth Sense (1999)",
-"The Kid (1921)",
-"All About Eve (1950)",
-"Ran (1985)",
-"Casino (1995)",
-"The Thing (1982)",
-"No Country for Old Men (2007)",
-"Prisoners (2013)",
-"Top Gun: Maverick (2022)",
-"Kill Bill: Vol. 1 (2003)",
-"Pan's Labyrinth (2006)",
-"Unforgiven (1992)",
-"A Beautiful Mind (2001)",
-"Howl's Moving Castle (2004)",
-"The Treasure of the Sierra Madre (1948)",
-"Finding Nemo (2003)",
-"Klaus (2019)",
-"Project Hail Mary (2026)",
-"Demon Slayer: Kimetsu No Yaiba Infinity Castle (2025)",
-"Yojimbo (1961)",
-"The Elephant Man (1980)",
-"The Great Escape (1963)",
-"Monty Python and the Holy Grail (1975)",
-"Dial M for Murder (1954)",
-"The Secret in Their Eyes (2009)",
-"Gone with the Wind (1939)",
-"Lock, Stock and Two Smoking Barrels (1998)",
-"Catch Me If You Can (2002)",
-"Chinatown (1974)",
-"V for Vendetta (2005)",
-"Dead Poets Society (1989)",
-"Inside Out (2015)",
-"The Best of Youth (2003)",
-"Trainspotting (1996)",
-"Harry Potter and the Deathly Hallows: Part 2 (2011)",
-"Three Billboards Outside Ebbing, Missouri (2017)",
-"The Bridge on the River Kwai (1957)",
-"Rashomon (1950)",
-"Barry Lyndon (1975)",
-"Ben-Hur (1959)",
-"The Wild Robot (2024)",
-"Warrior (2011)",
-"Hacksaw Ridge (2016)",
-"Ratatouille (2007)",
-"Mad Max: Fury Road (2015)",
-"Million Dollar Baby (2004)",
-"Fargo (1996)",
-"Children of Heaven (1997)",
-"My Neighbor Totoro (1988)",
-"Gran Torino (2008)",
-"12 Years a Slave (2013)",
-"Raging Bull (1980)",
-"How to Train Your Dragon (2010)",
-"Memories of Murder (2003)",
-"The Grand Budapest Hotel (2014)",
-"Before Sunrise (1995)",
-"Monsters, Inc. (2001)",
-"Blade Runner (1982)",
-"Gone Girl (2014)",
-"Ford v Ferrari (2019)",
-"Jaws (1975)",
-"In the Name of the Father (1993)",
-"Chainsaw Man - The Movie: Reze Arc (2025)",
-"Spider-Man: No Way Home (2021)",
-"Wild Tales (2014)",
-"A Silent Voice: The Movie (2016)",
-"The Gold Rush (1925)",
-"Mary and Max (2009)",
-"Sherlock Jr. (1924)",
-"The Wages of Fear (1953)",
-"The Deer Hunter (1978)",
-"Logan (2017)",
-"Pirates of the Caribbean: The Curse of the Black Pearl (2003)",
-"Rocky (1976)",
-"The General (1926)",
-"Mr. Smith Goes to Washington (1939)",
-"Tokyo Story (1953)",
-"La haine (1995)",
-"Maharaja (2024)",
-"The Sound of Music (1965)",
-"Spotlight (2015)",
-"Jai Bhim (2021)",
-"The Terminator (1984)",
-"Wild Strawberries (1957)",
-"On the Waterfront (1954)",
-"The Best Years of Our Lives (1946)",
-"The Third Man (1949)",
-"The Big Lebowski (1998)",
-"The Incredibles (2004)",
-"Hachi: A Dog's Tale (2009)",
-"Before Sunset (2004)",
-"The Iron Giant (1999)",
-"The Exorcist (1973)",
-"Room (2015)",
-"Hotel Rwanda (2004)",
-"Platoon (1986)",
-"The Seventh Seal (1957)",
-"Rush (2013)",
-"Stand by Me (1986)",
-"The Battle of Algiers (1966)",
-"The Wizard of Oz (1939)",
-"My Father and My Son (2005)",
-"The Passion of Joan of Arc (1928)",
-"Drishyam (2015)",
-"Hera Pheri (2000)",
-"Andhadhun (2018)"
+{
+"text": "The Shawshank Redemption (1994)",
+"img": "https://m.media-amazon.com/images/M/MV5BMDAyY2FhYjctNDc5OS00MDNlLThiMGUtY2UxYWVkNGY2ZjljXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Godfather (1972)",
+"img": "https://m.media-amazon.com/images/M/MV5BNGEwYjgwOGQtYjg5ZS00Njc1LTk2ZGEtM2QwZWQ2NjdhZTE5XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Dark Knight (2008)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_UX300_.jpg"
+},
+{
+"text": "The Godfather Part II (1974)",
+"img": "https://m.media-amazon.com/images/M/MV5BMDIxMzBlZDktZjMxNy00ZGI4LTgxNDEtYWRlNzRjMjJmOGQ1XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Lord of the Rings: The Return of the King (2003)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTZkMjBjNWMtZGI5OC00MGU0LTk4ZTItODg2NWM3NTVmNWQ4XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "12 Angry Men (1957)",
+"img": "https://m.media-amazon.com/images/M/MV5BYjE4NzdmOTYtYjc5Yi00YzBiLWEzNDEtNTgxZGQ2MWVkN2NiXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Schindler's List (1993)",
+"img": "https://m.media-amazon.com/images/M/MV5BNjM1ZDQxYWUtMzQyZS00MTE1LWJmZGYtNGUyNTdlYjM3ZmVmXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Lord of the Rings: The Fellowship of the Ring (2001)",
+"img": "https://m.media-amazon.com/images/M/MV5BNzIxMDQ2YTctNDY4MC00ZTRhLTk4ODQtMTVlOWY4NTdiYmMwXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Pulp Fiction (1994)",
+"img": "https://m.media-amazon.com/images/M/MV5BYTViYTE3ZGQtNDBlMC00ZTAyLTkyODMtZGRiZDg0MjA2YThkXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Lord of the Rings: The Two Towers (2002)",
+"img": "https://m.media-amazon.com/images/M/MV5BMGQxMDdiOWUtYjc1Ni00YzM1LWE2NjMtZTg3Y2JkMjEzMTJjXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Good, the Bad and the Ugly (1966)",
+"img": "https://m.media-amazon.com/images/M/MV5BMWM5ZjQxM2YtNDlmYi00ZDNhLWI4MWUtN2VkYjBlMTY1ZTkwXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Forrest Gump (1994)",
+"img": "https://m.media-amazon.com/images/M/MV5BNDYwNzVjMTItZmU5YS00YjQ5LTljYjgtMjY2NDVmYWMyNWFmXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Inception (2010)",
+"img": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_UX300_.jpg"
+},
+{
+"text": "Fight Club (1999)",
+"img": "https://m.media-amazon.com/images/M/MV5BOTgyOGQ1NDItNGU3Ny00MjU3LTg2YWEtNmEyYjBiMjI1Y2M5XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Star Wars: Episode V - The Empire Strikes Back (1980)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTkxNGFlNDktZmJkNC00MDdhLTg0MTEtZjZiYWI3MGE5NWIwXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Matrix (1999)",
+"img": "https://m.media-amazon.com/images/M/MV5BN2NmN2VhMTQtMDNiOS00NDlhLTliMjgtODE2ZTY0ODQyNDRhXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Interstellar (2014)",
+"img": "https://m.media-amazon.com/images/M/MV5BYzdjMDAxZGItMjI2My00ODA1LTlkNzItOWFjMDU5ZDJlYWY3XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "GoodFellas (1990)",
+"img": "https://m.media-amazon.com/images/M/MV5BN2E5NzI2ZGMtY2VjNi00YTRjLWI1MDUtZGY5OWU1MWJjZjRjXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "One Flew Over the Cuckoo's Nest (1975)",
+"img": "https://m.media-amazon.com/images/M/MV5BYjBkMjgzMzYtNzRiMS00NDc3LWE4YTUtZjYxYjZhNjNhYzhhXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Seven (1995)",
+"img": "https://m.media-amazon.com/images/M/MV5BY2IzNzMxZjctZjUxZi00YzAxLTk3ZjMtODFjODdhMDU5NDM1XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "It's a Wonderful Life (1946)",
+"img": "https://m.media-amazon.com/images/M/MV5BMDM4OWFhYjEtNTE5Yy00NjcyLTg5N2UtZDQwNDZlYjlmNDU5XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Silence of the Lambs (1991)",
+"img": "https://m.media-amazon.com/images/M/MV5BNDdhOGJhYzctYzYwZC00YmI2LWI0MjctYjg4ODdlMDExYjBlXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Saving Private Ryan (1998)",
+"img": "https://m.media-amazon.com/images/M/MV5BZGZhZGQ1ZWUtZTZjYS00MDJhLWFkYjctN2ZlYjE5NWYwZDM2XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Seven Samurai (1954)",
+"img": "https://m.media-amazon.com/images/M/MV5BZjliMWExOTMtZDQ3ZS00NWU3LWIyN2EtMjllNzk3ZTNlYzg4XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Green Mile (1999)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTUxMzQyNjA5MF5BMl5BanBnXkFtZTYwOTU2NTY3._V1_UX300_.jpg"
+},
+{
+"text": "City of God (2002)",
+"img": "https://m.media-amazon.com/images/M/MV5BYjY4NGI5OTUtY2ZlZS00Zjk4LTk5N2MtN2JmYWVjNGNmMGRlXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Life Is Beautiful (1997)",
+"img": "https://m.media-amazon.com/images/M/MV5BZTBhOGYzZjQtYzE0Mi00MGIwLWE0MWYtNzMxNTM2OTFkM2NjXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Terminator 2: Judgment Day (1991)",
+"img": "https://m.media-amazon.com/images/M/MV5BNGMyMGNkMDUtMjc2Ni00NWFlLTgyODEtZTY2MzBiZTg0OWZiXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Back to the Future (1985)",
+"img": "https://m.media-amazon.com/images/M/MV5BZmM3ZjE0NzctNjBiOC00MDZmLTgzMTUtNGVlOWFlOTNiZDJiXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Star Wars: Episode IV - A New Hope (1977)",
+"img": "https://m.media-amazon.com/images/M/MV5BOGUwMDk0Y2MtNjBlNi00NmRiLTk2MWYtMGMyMDlhYmI4ZDBjXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Spirited Away (2001)",
+"img": "https://m.media-amazon.com/images/M/MV5BNTEyNmEwOWUtYzkyOC00ZTQ4LTllZmUtMjk0Y2YwOGUzYjRiXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Gladiator (2000)",
+"img": "https://m.media-amazon.com/images/M/MV5BYWQ4YmNjYjEtOWE1Zi00Y2U4LWI4NTAtMTU0MjkxNWQ1ZmJiXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Pianist (2002)",
+"img": "https://m.media-amazon.com/images/M/MV5BMjEwNmEwYjgtNTk3ZC00NjljLTg5ZDctZTY3ZGQwZjRkZmQxXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Kill Bill: The Whole Bloody Affair (2004)",
+"img": "https://m.media-amazon.com/images/M/MV5BZDc2YzhkODAtZmRmZS00YzcxLWJkYWEtM2ZhZjY3MmMyZmJiXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Parasite (2019)",
+"img": "https://m.media-amazon.com/images/M/MV5BYjk1Y2U4MjQtY2ZiNS00OWQyLWI3MmYtZWUwNmRjYWRiNWNhXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Grave of the Fireflies (1988)",
+"img": "https://m.media-amazon.com/images/M/MV5BNTY5MmE2OGMtN2IxNC00MDY4LTkwMGEtZDUzOTYyNWE0ZTNjXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Harakiri (1962)",
+"img": "https://m.media-amazon.com/images/M/MV5BZThiZjU5ZDQtZDI4Mi00ZGYyLTkzOTktYmIzZTFlZTkxYzg5XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Lion King (1994)",
+"img": "https://m.media-amazon.com/images/M/MV5BZGRiZDZhZjItM2M3ZC00Y2IyLTk3Y2MtMWY5YjliNDFkZTJlXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Psycho (1960)",
+"img": "https://m.media-amazon.com/images/M/MV5BYjZhMzFiZjItODA3ZC00MmRhLWIzMGYtMmVjOWUwYTA3MTRjXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Departed (2006)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTI1MTY2OTIxNV5BMl5BanBnXkFtZTYwNjQ4NjY3._V1_UX300_.jpg"
+},
+{
+"text": "Whiplash (2014)",
+"img": "https://m.media-amazon.com/images/M/MV5BMDFjOWFkYzktYzhhMC00NmYyLTkwY2EtYjViMDhmNzg0OGFkXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Prestige (2006)",
+"img": "https://m.media-amazon.com/images/M/MV5BM2Y0YmM5MWYtZTYzNi00ZjU5LTlmOGYtZDQ4ODQyMjAzNjQ2XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "American History X (1998)",
+"img": "https://m.media-amazon.com/images/M/MV5BMzhiOTQ0NDItOTg0Zi00OGVmLWE0OGEtMTI4NDM0NWMxZWU4XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Spider-Man: Across the Spider-Verse (2023)",
+"img": "https://m.media-amazon.com/images/M/MV5BNThiZjA3MjItZGY5Ni00ZmJhLWEwN2EtOTBlYTA4Y2E0M2ZmXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Cinema Paradiso (1988)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTljNzc4YWEtYTZlMS00ODMyLWIwMTAtNWQxY2VkMDEwYTk5XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Léon: The Professional (1994)",
+"img": "https://m.media-amazon.com/images/M/MV5BNGRkYTNhOWQtYmI0Ni00MjZhLWJmMzAtMTA2Mjg4NGNiNDU0XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Casablanca (1942)",
+"img": "https://m.media-amazon.com/images/M/MV5BNWEzN2U1YTYtYTQyMS00NTVkLWE2NGQtZWFlMmM0MDNjMmRiXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Intouchables (2011)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTYxNDA3MDQwNl5BMl5BanBnXkFtZTcwNTU4Mzc1Nw@@._V1_UX300_.jpg"
+},
+{
+"text": "The Usual Suspects (1995)",
+"img": "https://m.media-amazon.com/images/M/MV5BOTE5MDUxZDUtZWZmZC00NDVmLWFhOGQtNWI2YTc4NzY3MGQ0XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Django Unchained (2012)",
+"img": "https://m.media-amazon.com/images/M/MV5BMjIyNTQ5NjQ1OV5BMl5BanBnXkFtZTcwODg1MDU4OA@@._V1_UX300_.jpg"
+},
+{
+"text": "Alien (1979)",
+"img": "https://m.media-amazon.com/images/M/MV5BN2NhMDk2MmEtZDQzOC00MmY5LThhYzAtMDdjZGFjOGZjMjdjXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Rear Window (1954)",
+"img": "https://m.media-amazon.com/images/M/MV5BODZhOWI1ODgtMzdiOS00YjNkLTgwOGUtYmIyZDg5ZmQwMzQ1XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Modern Times (1936)",
+"img": "https://m.media-amazon.com/images/M/MV5BODVkZGFhNGQtYjdiYi00Njc4LWFmYTItNTlmNzJjMTg1ZDc5XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Once Upon a Time in the West (1968)",
+"img": "https://m.media-amazon.com/images/M/MV5BZjYyNGY1MDEtN2I1MC00MGVhLTljZTYtODQ1NzQ0ODc2NzZlXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "WALL·E (2008)",
+"img": "https://m.media-amazon.com/images/M/MV5BMjExMTg5OTU0NF5BMl5BanBnXkFtZTcwMjMxMzMzMw@@._V1_UX300_.jpg"
+},
+{
+"text": "City Lights (1931)",
+"img": "https://m.media-amazon.com/images/M/MV5BM2U4NjgzODUtODkyOC00YTE2LTlhNTItYzFlYmM1NTEzZDA2XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Apocalypse Now (1979)",
+"img": "https://m.media-amazon.com/images/M/MV5BZDhiMTljYjYtODc1Yy00MmEwLTg2OTYtYmE1YTRmNDE4MmEwXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Memento (2000)",
+"img": "https://m.media-amazon.com/images/M/MV5BMGQ3Y2Q4NjktN2E4Ny00Y2Q2LTliZDUtZTNiNjRhY2I0NGIyXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Avengers: Infinity War (2018)",
+"img": "https://m.media-amazon.com/images/M/MV5BMjMxNjY2MDU1OV5BMl5BanBnXkFtZTgwNzY1MTUwNTM@._V1_UX300_.jpg"
+},
+{
+"text": "Dune: Part Two (2024)",
+"img": "https://m.media-amazon.com/images/M/MV5BNTc0YmQxMjEtODI5MC00NjFiLTlkMWUtOGQ5NjFmYWUyZGJhXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Raiders of the Lost Ark (1981)",
+"img": "https://m.media-amazon.com/images/M/MV5BOGNhMjg2ZjgtYzk4Ni00MTViLTg1MmUtYzM2MDZiYjZlMmU3XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Spider-Man: Into the Spider-Verse (2018)",
+"img": "https://m.media-amazon.com/images/M/MV5BMjMwNDkxMTgzOF5BMl5BanBnXkFtZTgwNTkwNTQ3NjM@._V1_UX300_.jpg"
+},
+{
+"text": "The Odyssey (2026)",
+"img": "https://m.media-amazon.com/images/M/MV5BNTcyNmJlZmQtNDUwYy00NDBjLTg1NGQtYTY2Y2UxMWM3NmI1XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Lives of Others (2006)",
+"img": "https://m.media-amazon.com/images/M/MV5BYjM1N2Q0YWEtN2E5MC00NDM3LTk2NTEtMTc1NTk5OTA5ZGIzXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Sunset Boulevard (1950)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTU0NTkyNzYwMF5BMl5BanBnXkFtZTgwMDU0NDk5MTI@._V1_UX300_.jpg"
+},
+{
+"text": "Witness for the Prosecution (1957)",
+"img": "https://m.media-amazon.com/images/M/MV5BNjRhNTQzMzQtMWViMi00ODQ1LTg0MTEtYWE4ZWZlYjM4YjJhXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Paths of Glory (1957)",
+"img": "https://m.media-amazon.com/images/M/MV5BNmQ2NmI2ODYtMDQzNS00NzQyLTkzZjgtZmZlYTQ5MTc1OWU3XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Inglourious Basterds (2009)",
+"img": "https://m.media-amazon.com/images/M/MV5BODZhMWJlNjYtNDExNC00MTIzLTllM2ItOGQ2NGVjNDQ3MzkzXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Shining (1980)",
+"img": "https://m.media-amazon.com/images/M/MV5BNmM5ZThhY2ItOGRjOS00NzZiLWEwYTItNDgyMjFkOTgxMmRiXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Great Dictator (1940)",
+"img": "https://m.media-amazon.com/images/M/MV5BNDE3NmIzZjItMzNlMi00YWI0LWIzMTktMGRkMWE0ZDhiMmM5XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Aliens (1986)",
+"img": "https://m.media-amazon.com/images/M/MV5BN2ZiMmQ0YWItN2IwZS00Y2NhLWE0NzQtNGNiOGFjN2U4MWNmXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "High and Low (1963)",
+"img": "https://m.media-amazon.com/images/M/MV5BMGJiNzllYjktODAzNS00OGUzLTlmY2MtMjA2ZTZhYTY1OTc4XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "12th Fail (2023)",
+"img": "https://m.media-amazon.com/images/M/MV5BNTE3OTIxZDYtNjA0NC00N2YxLTg1NGQtOTYxNmZkMDkwOWNjXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Avengers: Endgame (2019)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_UX300_.jpg"
+},
+{
+"text": "Good Will Hunting (1997)",
+"img": "https://m.media-amazon.com/images/M/MV5BNDdjZGQ5YzEtNTc2My00Mjc0LWFlMTctYzkwMzZlNzdiZWYzXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Coco (2017)",
+"img": "https://m.media-amazon.com/images/M/MV5BMDIyM2E2NTAtMzlhNy00ZGUxLWI1NjgtZDY5MzhiMDc5NGU3XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Toy Story (1995)",
+"img": "https://m.media-amazon.com/images/M/MV5BZTA3OWVjOWItNjE1NS00NzZiLWE1MjgtZDZhMWI1ZTlkNzYwXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Dark Knight Rises (2012)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTk4ODQzNDY3Ml5BMl5BanBnXkFtZTcwODA0NTM4Nw@@._V1_UX300_.jpg"
+},
+{
+"text": "Amadeus (1984)",
+"img": "https://m.media-amazon.com/images/M/MV5BMzc2MjM0NTMtOGY4NC00NzY1LWE2ODUtZjMzY2RhNGNkZDAyXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Your Name. (2016)",
+"img": "https://m.media-amazon.com/images/M/MV5BMjI1ODZkYTgtYTY3Yy00ZTJkLWFkOTgtZDUyYWM4MzQwNjk0XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "3 Idiots (2009)",
+"img": "https://m.media-amazon.com/images/M/MV5BNzc4ZWQ3NmYtODE0Ny00YTQ4LTlkZWItNTBkMGQ0MmUwMmJlXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Braveheart (1995)",
+"img": "https://m.media-amazon.com/images/M/MV5BNGMxZDBhNGQtYTZlNi00N2UzLWI4NDEtNmUzNWM2NTdmZDA0XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Das Boot (1981)",
+"img": "https://m.media-amazon.com/images/M/MV5BNGU0MWZlMTUtM2Y3Ny00NGNmLWE5NmEtN2YxOWQzMGM3ZWYzXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Princess Mononoke (1997)",
+"img": "https://m.media-amazon.com/images/M/MV5BZTcyN2Y0MDYtMGI1NC00MWQ1LWFhZGMtN2U4NTcxZGYyNjljXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Oldboy (2003)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTAwNzNjYWItZmI0Ni00ZTcyLWIwNWMtZjlmNGMxZTEyYTJmXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1964)",
+"img": "https://m.media-amazon.com/images/M/MV5BMjFjYzBlOTktMTI2OS00ZWVhLTgxMDUtNzAwODY2NmI3YTAzXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "American Beauty (1999)",
+"img": "https://m.media-amazon.com/images/M/MV5BMDI1MDE0OTMtMmI2MS00Yjc2LTg2MTItMWExYTg5NzA1OGUzXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Capernaum (2018)",
+"img": "https://m.media-amazon.com/images/M/MV5BYzEyMzQ1OTktZTljZi00OWQzLWE2ZmUtZjQyNzBjYjE1NTc0XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Attack on Titan: The Last Attack (2024)",
+"img": "https://m.media-amazon.com/images/M/MV5BNzVjOWEwYjEtNDJhOC00YjUyLThjMWItMDQwZGY1ODM4YzI3XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Singin' in the Rain (1952)",
+"img": "https://m.media-amazon.com/images/M/MV5BMGQzZDFjZWUtZDU4ZS00ZjM3LTgyYmItYjA3YmIwYzRkZWY3XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Once Upon a Time in America (1984)",
+"img": "https://m.media-amazon.com/images/M/MV5BMDQ0ZTg2OGUtZjMyOC00M2M5LThkMmItZmM2MmUzMmIxMWJhXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Joker (2019)",
+"img": "https://m.media-amazon.com/images/M/MV5BNzY3OWQ5NDktNWQ2OC00ZjdlLThkMmItMDhhNDk3NTFiZGU4XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Toy Story 3 (2010)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTgxOTY4Mjc0MF5BMl5BanBnXkFtZTcwNTA4MDQyMw@@._V1_UX300_.jpg"
+},
+{
+"text": "Star Wars: Episode VI - Return of the Jedi (1983)",
+"img": "https://m.media-amazon.com/images/M/MV5BNWEwOTI0MmUtMGNmNy00ODViLTlkZDQtZTg1YmQ3MDgyNTUzXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Come and See (1985)",
+"img": "https://m.media-amazon.com/images/M/MV5BNDlkZmVkZDAtZGFmMS00OWIzLWJkY2YtNWE5NjNhNjhiZGE3XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Requiem for a Dream (2000)",
+"img": "https://m.media-amazon.com/images/M/MV5BN2ZlMjIzZjctYzA2My00ZWYyLWI4ZjctMGI2NWYyNzFiZjAwXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Incendies (2010)",
+"img": "https://m.media-amazon.com/images/M/MV5BYWFmMjdmNjctNzhhOC00ZmMzLTkwOGItMmVmZDU4MjE2MTYwXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Ikiru (1952)",
+"img": "https://m.media-amazon.com/images/M/MV5BMmZiNzExNmUtODU5YS00MDE1LWI0YTItMzVmNjM1ZTQ5NGVhXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Hunt (2012)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTg2NDg3ODg4NF5BMl5BanBnXkFtZTcwNzk3NTc3Nw@@._V1_UX300_.jpg"
+},
+{
+"text": "Eternal Sunshine of the Spotless Mind (2004)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTY4NzcwODg3Nl5BMl5BanBnXkFtZTcwNTEwOTMyMw@@._V1_UX300_.jpg"
+},
+{
+"text": "The Apartment (1960)",
+"img": "https://m.media-amazon.com/images/M/MV5BNDdhMzVhOWQtNDU2Mi00ZmZmLWJiZDMtY2QxMjhjY2Y1ZTI5XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Lawrence of Arabia (1962)",
+"img": "https://m.media-amazon.com/images/M/MV5BYjY0YTQ1OTAtYjEyNy00NTQ4LThlMTQtM2QwYTVhYWFhNjU5XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Heat (1995)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTkxYjU1OTMtYWViZC00ZjAzLWI3MDktZGQ2N2VmMjVjNDRlXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Scarface (1983)",
+"img": "https://m.media-amazon.com/images/M/MV5BNDUzYjY0NmUtMDM4OS00Y2Q5LWJiODYtNTk0ZTk0YjZhMTg1XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Reservoir Dogs (1992)",
+"img": "https://m.media-amazon.com/images/M/MV5BMmMzYjg4NDctYWY0Mi00OGViLWIzMTMtYWNlZGY5ZDJmYjk3XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Up (2009)",
+"img": "https://m.media-amazon.com/images/M/MV5BNmI1ZTc5MWMtMDYyOS00ZDc2LTkzOTAtNjQ4NWIxNjYyNDgzXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "2001: A Space Odyssey (1968)",
+"img": "https://m.media-amazon.com/images/M/MV5BNjU0NDFkMTQtZWY5OS00MmZhLTg3Y2QtZmJhMzMzMWYyYjc2XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Double Indemnity (1944)",
+"img": "https://m.media-amazon.com/images/M/MV5BM2YwNjZlZDktNTlmNS00ODQwLWJmNmUtYmE1NTBhYjc1YTY5XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Like Stars on Earth (2007)",
+"img": "https://m.media-amazon.com/images/M/MV5BZTI0ZGRiMDEtNGNjMS00MGU4LWI3OTktNzcxMDZmZTk3MTljXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "North by Northwest (1959)",
+"img": "https://m.media-amazon.com/images/M/MV5BZWIzODI2OGItMzM0Ny00OGRmLTlkNmItMDQxMTFmMTk3YmQwXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Full Metal Jacket (1987)",
+"img": "https://m.media-amazon.com/images/M/MV5BYWUzNzZkNzUtNDdiYy00Nzk5LTgxMmItNTk0MjRjNjdjNDA0XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "I Swear (2025)",
+"img": "https://m.media-amazon.com/images/M/MV5BNWQxYTMyZTktZDg5Yi00Y2YwLWI4YzQtMjkyYmYxNmFjYThmXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "A Separation (2011)",
+"img": "https://m.media-amazon.com/images/M/MV5BMDM0ZWRmMzctM2M5ZS00ZjU0LWIxN2MtNWNlNGY1ZDhjMDVhXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Die Hard (1988)",
+"img": "https://m.media-amazon.com/images/M/MV5BMGNlYmM1NmQtYWExMS00NmRjLTg5ZmEtMmYyYzJkMzljYWMxXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "M (1931)",
+"img": "https://m.media-amazon.com/images/M/MV5BYWE0NDIxZTktMDg2Yi00NjA5LTlhMzMtZjViOTNkODhjNjZjXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Amélie (2001)",
+"img": "https://m.media-amazon.com/images/M/MV5BOTNmYzY0MWQtZGZmNy00Y2Y4LWFmMDQtMTZjYTdiYzEwZGQ2XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "To Kill a Mockingbird (1962)",
+"img": "https://m.media-amazon.com/images/M/MV5BZTlkYWU4MGEtZmQyYi00OWEzLTgzY2EtYzVjOTEzYzAyNTk1XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Indiana Jones and the Last Crusade (1989)",
+"img": "https://m.media-amazon.com/images/M/MV5BNGIxNzQ0YzYtMjNmYi00YjBlLWFjNzEtNGE3ZGFmYTczM2MwXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Vertigo (1958)",
+"img": "https://m.media-amazon.com/images/M/MV5BNzEyZTUxMWItMGVhYy00Y2NlLTljYTMtYzBmMzI1YmUyMDBkXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Citizen Kane (1941)",
+"img": "https://m.media-amazon.com/images/M/MV5BYjk1ZDJlMmUtOWQ0Zi00MDM5LTk1OGYtODczNjFmMGYwZGVkXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Sting (1973)",
+"img": "https://m.media-amazon.com/images/M/MV5BM2E4MGZjOGItNzAwYy00MjU5LTliZTEtNTQ3YTUzNmUzMjE0XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "A Clockwork Orange (1971)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTY3MjM1Mzc4N15BMl5BanBnXkFtZTgwODM0NzAxMDE@._V1_UX300_.jpg"
+},
+{
+"text": "Metropolis (1927)",
+"img": "https://m.media-amazon.com/images/M/MV5BMjhjMGYyMjAtMzJkYy00NzhlLWIwY2MtMWQ2ODIxZDUyOGYyXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Truman Show (1998)",
+"img": "https://m.media-amazon.com/images/M/MV5BNzA3ZjZlNzYtMTdjMy00NjMzLTk5ZGYtMTkyYzNiOGM1YmM3XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Wolf of Wall Street (2013)",
+"img": "https://m.media-amazon.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_UX300_.jpg"
+},
+{
+"text": "1917 (2019)",
+"img": "https://m.media-amazon.com/images/M/MV5BYzkxZjg2NDQtMGVjMy00NWZkLTk0ZDEtZWE3NDYwYjAyMTg1XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Snatch (2000)",
+"img": "https://m.media-amazon.com/images/M/MV5BYzk5NjJkMTQtN2IyNC00YWM5LTlhZmMtNGI3MWNhMTU1YTc4XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Shutter Island (2010)",
+"img": "https://m.media-amazon.com/images/M/MV5BN2FjNWExYzEtY2YzOC00YjNlLTllMTQtNmIwM2Q1YzBhOWM1XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Downfall (2004)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTU0NTU5NTAyMl5BMl5BanBnXkFtZTYwNzYwMDg2._V1_UX300_.jpg"
+},
+{
+"text": "L.A. Confidential (1997)",
+"img": "https://m.media-amazon.com/images/M/MV5BODdiMjY1OGYtNDk0NC00NGQ1LWI4MDItOTJhMTM0YjE1YTAzXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Green Book (2018)",
+"img": "https://m.media-amazon.com/images/M/MV5BNDU5YTNmMmItN2QxNy00OGQ0LTg5MTctNzFmYjEzZjcwN2UwXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Dangal (2016)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTQ4MzQzMzM2Nl5BMl5BanBnXkFtZTgwMTQ1NzU3MDI@._V1_UX300_.jpg"
+},
+{
+"text": "Bicycle Thieves (1948)",
+"img": "https://m.media-amazon.com/images/M/MV5BMjIzMzAyMzg1Nl5BMl5BanBnXkFtZTgwMzMyNzk0MTE@._V1_UX300_.jpg"
+},
+{
+"text": "Woman in the Dunes (1964)",
+"img": "https://m.media-amazon.com/images/M/MV5BM2E1ZjY5MjItZTUxZS00NTI1LWEwMmEtODhlMDAyMzUyOTRmXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Judgment at Nuremberg (1961)",
+"img": "https://m.media-amazon.com/images/M/MV5BNDc2ODQ5NTE2MV5BMl5BanBnXkFtZTcwODExMjUyNA@@._V1_UX300_.jpg"
+},
+{
+"text": "Jurassic Park (1993)",
+"img": "https://m.media-amazon.com/images/M/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_UX300_.jpg"
+},
+{
+"text": "Batman Begins (2005)",
+"img": "https://m.media-amazon.com/images/M/MV5BMzA2NDQzZDEtNDU5Ni00YTlkLTg2OWEtYmQwM2Y1YTBjMjFjXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Oppenheimer (2023)",
+"img": "https://m.media-amazon.com/images/M/MV5BN2JkMDc5MGQtZjg3YS00NmFiLWIyZmQtZTJmNTM5MjVmYTQ4XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "For a Few Dollars More (1965)",
+"img": "https://m.media-amazon.com/images/M/MV5BNTRmOTcyYmYtMTIwNi00ZGYyLTk4YjYtZGJlZTgwZGY0NGQyXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Hamilton (2020)",
+"img": "https://m.media-amazon.com/images/M/MV5BYTc3MWIyMzAtMTZmNC00YmNjLWIyZTgtMmU4NjZkYzZkOThkXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "There Will Be Blood (2007)",
+"img": "https://m.media-amazon.com/images/M/MV5BMjAxODQ4MDU5NV5BMl5BanBnXkFtZTcwMDU4MjU1MQ@@._V1_UX300_.jpg"
+},
+{
+"text": "Some Like It Hot (1959)",
+"img": "https://m.media-amazon.com/images/M/MV5BZTllZDYyNjEtY2RmMS00NmJhLWI4ODAtMTQ0NWFiZTJhZjA0XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Taxi Driver (1976)",
+"img": "https://m.media-amazon.com/images/M/MV5BZDNhMGYwM2UtMTdlZS00MGQ1LWI2YzAtODY5YWI1MjYyNzRmXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Father (2020)",
+"img": "https://m.media-amazon.com/images/M/MV5BYzUxMDAyMDAtNzIyZi00OGQ1LTllMjEtYzRjOThkZTUxNTliXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Sixth Sense (1999)",
+"img": "https://m.media-amazon.com/images/M/MV5BZWQ2OTY0M2UtMTQxNC00MmIzLTllNDQtNDQ0MTQyYzI2M2ZiXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Kid (1921)",
+"img": "https://m.media-amazon.com/images/M/MV5BNjkxMzY1NTQtN2YwOS00NmIwLTlkNTMtMjNkMzk1ZTk3ZDU2XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "All About Eve (1950)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTY2MTAzODI5NV5BMl5BanBnXkFtZTgwMjM4NzQ0MjE@._V1_UX300_.jpg"
+},
+{
+"text": "Ran (1985)",
+"img": "https://m.media-amazon.com/images/M/MV5BZDk2NDY5YjktMjEyMC00OTJhLTkzM2EtY2Q4Y2RjYzc2Yjk4XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Casino (1995)",
+"img": "https://m.media-amazon.com/images/M/MV5BMDRlZWZjZjYtYzY2NS00ZWVjLTkwYzAtZTA2ZDAzMGRiYmYwXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Thing (1982)",
+"img": "https://m.media-amazon.com/images/M/MV5BYTA3NDU5MWEtNTk4Yy00ZDNkLThmZTQtMjU3ZGVhYzAyMzU4XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "No Country for Old Men (2007)",
+"img": "https://m.media-amazon.com/images/M/MV5BMjA5Njk3MjM4OV5BMl5BanBnXkFtZTcwMTc5MTE1MQ@@._V1_UX300_.jpg"
+},
+{
+"text": "Prisoners (2013)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTg0NTIzMjQ1NV5BMl5BanBnXkFtZTcwNDc3MzM5OQ@@._V1_UX300_.jpg"
+},
+{
+"text": "Top Gun: Maverick (2022)",
+"img": "https://m.media-amazon.com/images/M/MV5BMDBkZDNjMWEtOTdmMi00NmExLTg5MmMtNTFlYTJlNWY5YTdmXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Kill Bill: Vol. 1 (2003)",
+"img": "https://m.media-amazon.com/images/M/MV5BZmMyYzJlZmYtY2I3NC00NjAyLTkyZWItZjdjZDI1YTYyYTEwXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Pan's Labyrinth (2006)",
+"img": "https://m.media-amazon.com/images/M/MV5BOTc1NTAxMWItMWFlNy00MmU2LTkwMTMtNzMwOTg5OTQ5YTFiXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Unforgiven (1992)",
+"img": "https://m.media-amazon.com/images/M/MV5BNmZmMzM3YWMtZjg5Yi00M2MxLTg3ZGItNGU4YjQxNDAxM2Q4XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "A Beautiful Mind (2001)",
+"img": "https://m.media-amazon.com/images/M/MV5BYjgzNjFkMmItOGJhNi00NWM3LWJlYTUtNDExMGQ3ZTI3NjJkXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Howl's Moving Castle (2004)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTY1OTg0MjE3MV5BMl5BanBnXkFtZTcwNTUxMTkyMQ@@._V1_UX300_.jpg"
+},
+{
+"text": "The Treasure of the Sierra Madre (1948)",
+"img": "https://m.media-amazon.com/images/M/MV5BOWM1YjFmODEtMWNhMC00YmI1LWI0Y2EtYzg0YTBhZWI4ODE3XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Finding Nemo (2003)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTc5NjExNTA5OV5BMl5BanBnXkFtZTYwMTQ0ODY2._V1_UX300_.jpg"
+},
+{
+"text": "Klaus (2019)",
+"img": "https://m.media-amazon.com/images/M/MV5BZDA4ODhlMzctNGRmYi00NmViLTkxZGYtZjRkNGQ5YzYwYWVlXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Project Hail Mary (2026)",
+"img": "https://m.media-amazon.com/images/M/MV5BNTkwNzJiYTctNzI3NC00NjE1LTlhYjktY2Q5MTdmMWFmNzcxXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Demon Slayer: Kimetsu No Yaiba Infinity Castle (2025)",
+"img": "https://m.media-amazon.com/images/M/MV5BOGQ3YWUzYjEtMTJiYy00ZjQ0LWI0YjktYjhiNGVhNGExYTM3XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Yojimbo (1961)",
+"img": "https://m.media-amazon.com/images/M/MV5BYzFkODA1N2QtY2UyMC00NTMwLWEyNzctMmE3YjIzNzE1MzY4XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Elephant Man (1980)",
+"img": "https://m.media-amazon.com/images/M/MV5BMGE2MzViYzEtZDFmOC00YmViLWFkZTQtYmI2NmI3NDJjMDc0XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Great Escape (1963)",
+"img": "https://m.media-amazon.com/images/M/MV5BMDRhNmJjMzEtMWU5MC00YmEyLTg3ZmYtNzYxZTI1ZGU4ZjI1XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Monty Python and the Holy Grail (1975)",
+"img": "https://m.media-amazon.com/images/M/MV5BYWY4YmUzZmUtMzQ0ZS00N2Y2LWJlODQtN2IwMDc1MWQwMmU3XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Dial M for Murder (1954)",
+"img": "https://m.media-amazon.com/images/M/MV5BZmYzNDgzYjgtNmU3Ny00YzUxLWE3OWUtMjIxZmNkYTVhNDZmXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Secret in Their Eyes (2009)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTgwNTI3OTczOV5BMl5BanBnXkFtZTcwMTM3MTUyMw@@._V1_UX300_.jpg"
+},
+{
+"text": "Gone with the Wind (1939)",
+"img": "https://m.media-amazon.com/images/M/MV5BYmYxZTE3YzMtYmE2Yy00NmFlLTkzYTAtYTAzN2IzNDFkN2E0XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Lock, Stock and Two Smoking Barrels (1998)",
+"img": "https://m.media-amazon.com/images/M/MV5BMmY1M2M5ZmMtYzllZC00YzAxLTk4MjktZDJkNjA1MTUwMGQ4XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Catch Me If You Can (2002)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTY5MzYzNjc5NV5BMl5BanBnXkFtZTYwNTUyNTc2._V1_UX300_.jpg"
+},
+{
+"text": "Chinatown (1974)",
+"img": "https://m.media-amazon.com/images/M/MV5BNmRmZTE0NmUtZjhiZi00MzQ3LTk3ZjctN2Q3ODYzY2U3MDk3XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "V for Vendetta (2005)",
+"img": "https://m.media-amazon.com/images/M/MV5BZDEwOTRjNjgtOGY0MC00NGYxLWFmYmQtNjc1ZjVhMTc0OWUxXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Dead Poets Society (1989)",
+"img": "https://m.media-amazon.com/images/M/MV5BMDYwNGVlY2ItMWYxMS00YjZiLWE5MTAtYWM5NWQ2ZWJjY2Q3XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Inside Out (2015)",
+"img": "https://m.media-amazon.com/images/M/MV5BOTgxMDQwMDk0OF5BMl5BanBnXkFtZTgwNjU5OTg2NDE@._V1_UX300_.jpg"
+},
+{
+"text": "The Best of Youth (2003)",
+"img": "https://m.media-amazon.com/images/M/MV5BYzcxMTE2YjUtMzIyMy00NDNjLWE3ZWYtODQzYmNhNDVhNDZmXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Trainspotting (1996)",
+"img": "https://m.media-amazon.com/images/M/MV5BYmVkNGJkMzQtYWQwOS00OTZmLThjODQtZjNjNzllYzRiNTE0XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Harry Potter and the Deathly Hallows: Part 2 (2011)",
+"img": "https://m.media-amazon.com/images/M/MV5BOTA1Mzc2N2ItZWRiNS00MjQzLTlmZDQtMjU0NmY1YWRkMGQ4XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Three Billboards Outside Ebbing, Missouri (2017)",
+"img": "https://m.media-amazon.com/images/M/MV5BMjI0ODcxNzM1N15BMl5BanBnXkFtZTgwMzIwMTEwNDI@._V1_UX300_.jpg"
+},
+{
+"text": "The Bridge on the River Kwai (1957)",
+"img": "https://m.media-amazon.com/images/M/MV5BNzdkYmU2YmItNmZiYy00OWQyLTg0YWYtZmUxM2U3YTRiNTQ1XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Rashomon (1950)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTk1MDU5MjQ5NF5BMl5BanBnXkFtZTgwMDM2OTE4MzE@._V1_UX300_.jpg"
+},
+{
+"text": "Barry Lyndon (1975)",
+"img": "https://m.media-amazon.com/images/M/MV5BNmM2MGQ5Y2UtYzA3ZC00ZDJlLTkwNDYtMjBmZGExZDJiN2RlXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Ben-Hur (1959)",
+"img": "https://m.media-amazon.com/images/M/MV5BNjg2M2E1YzYtOThmMC00NjAyLWI5MzgtMDEwOGFiODdlOGUzXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Wild Robot (2024)",
+"img": "https://m.media-amazon.com/images/M/MV5BZWNiZjVlZTUtNGUwYi00MjJmLTg2MDctNWEzYTJiMzY1ODc4XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Warrior (2011)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTk4ODk5MTMyNV5BMl5BanBnXkFtZTcwMDMyNTg0Ng@@._V1_UX300_.jpg"
+},
+{
+"text": "Hacksaw Ridge (2016)",
+"img": "https://m.media-amazon.com/images/M/MV5BMjQ1NjM3MTUxNV5BMl5BanBnXkFtZTgwMDc5MTY5OTE@._V1_UX300_.jpg"
+},
+{
+"text": "Ratatouille (2007)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTMzODU0NTkxMF5BMl5BanBnXkFtZTcwMjQ4MzMzMw@@._V1_UX300_.jpg"
+},
+{
+"text": "Mad Max: Fury Road (2015)",
+"img": "https://m.media-amazon.com/images/M/MV5BZDRkODJhOTgtOTc1OC00NTgzLTk4NjItNDgxZDY4YjlmNDY2XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Million Dollar Baby (2004)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTkxNzA1NDQxOV5BMl5BanBnXkFtZTcwNTkyMTIzMw@@._V1_UX300_.jpg"
+},
+{
+"text": "Fargo (1996)",
+"img": "https://m.media-amazon.com/images/M/MV5BNjg4MWE0MjEtODFhNy00MjA5LTg5ODktMzgwNWFmZTAwNjBlXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Children of Heaven (1997)",
+"img": "https://m.media-amazon.com/images/M/MV5BZWZlMjNhNzgtZGRhOS00Y2U5LThjOTctODNjZTI0ZTBiYzBhXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "My Neighbor Totoro (1988)",
+"img": "https://m.media-amazon.com/images/M/MV5BYWM3MDE3YjEtMzIzZC00ODE5LTgxNTItNmUyMTBkM2M2NmNiXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Gran Torino (2008)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTc5NTk2OTU1Nl5BMl5BanBnXkFtZTcwMDc3NjAwMg@@._V1_UX300_.jpg"
+},
+{
+"text": "12 Years a Slave (2013)",
+"img": "https://m.media-amazon.com/images/M/MV5BMjExMTEzODkyN15BMl5BanBnXkFtZTcwNTU4NTc4OQ@@._V1_UX300_.jpg"
+},
+{
+"text": "Raging Bull (1980)",
+"img": "https://m.media-amazon.com/images/M/MV5BMjlkYmYyZWQtNTZkOS00ZjA0LWEwNWUtNzE2ZGNiYjg0MjA2XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "How to Train Your Dragon (2010)",
+"img": "https://m.media-amazon.com/images/M/MV5BMjA5NDQyMjc2NF5BMl5BanBnXkFtZTcwMjg5ODcyMw@@._V1_UX300_.jpg"
+},
+{
+"text": "Memories of Murder (2003)",
+"img": "https://m.media-amazon.com/images/M/MV5BYmRjOWE5NmMtYTdkYS00ODFlLWJiMTMtYzE2NDZlZjlkZDQ0XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Grand Budapest Hotel (2014)",
+"img": "https://m.media-amazon.com/images/M/MV5BMzM5NjUxOTEyMl5BMl5BanBnXkFtZTgwNjEyMDM0MDE@._V1_UX300_.jpg"
+},
+{
+"text": "Before Sunrise (1995)",
+"img": "https://m.media-amazon.com/images/M/MV5BZDZhZmI1ZTUtYWI3NC00NTMwLTk3NWMtNDc0OGNjM2I0ZjlmXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Monsters, Inc. (2001)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTY1NTI0ODUyOF5BMl5BanBnXkFtZTgwNTEyNjQ0MDE@._V1_UX300_.jpg"
+},
+{
+"text": "Blade Runner (1982)",
+"img": "https://m.media-amazon.com/images/M/MV5BOWQ4YTBmNTQtMDYxMC00NGFjLTkwOGQtNzdhNmY1Nzc1MzUxXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Gone Girl (2014)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTk0MDQ3MzAzOV5BMl5BanBnXkFtZTgwNzU1NzE3MjE@._V1_UX300_.jpg"
+},
+{
+"text": "Ford v Ferrari (2019)",
+"img": "https://m.media-amazon.com/images/M/MV5BOTBjNTEyNjYtYjdkNi00YzE5LTljYzUtZjVlYmYwZmJmZWYxXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Jaws (1975)",
+"img": "https://m.media-amazon.com/images/M/MV5BYjViNDQzNmUtYzkxZi00NTk5LTljMmItYjJlZmZkODIxNjU1XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "In the Name of the Father (1993)",
+"img": "https://m.media-amazon.com/images/M/MV5BMGZiZDVjNzYtZWM4ZC00MzVkLThhNDEtMDJlOTBhYzVjMmNhXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Chainsaw Man - The Movie: Reze Arc (2025)",
+"img": "https://m.media-amazon.com/images/M/MV5BZmMzNGVhODktYmU5MS00MDg1LThlNTEtNTMyYTg5MDA0Njk4XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Spider-Man: No Way Home (2021)",
+"img": "https://m.media-amazon.com/images/M/MV5BMmFiZGZjMmEtMTA0Ni00MzA2LTljMTYtZGI2MGJmZWYzZTQ2XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Wild Tales (2014)",
+"img": "https://m.media-amazon.com/images/M/MV5BNzAzMjA1ODAxOV5BMl5BanBnXkFtZTgwODg4NTQzNDE@._V1_UX300_.jpg"
+},
+{
+"text": "A Silent Voice: The Movie (2016)",
+"img": "https://m.media-amazon.com/images/M/MV5BOTFiNzRiOWEtYTQwNy00NmRiLWE0ZWYtNTE0YjExZjFmZjkwXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Gold Rush (1925)",
+"img": "https://m.media-amazon.com/images/M/MV5BNGU1NjYzYTAtZmY0YS00NWIzLTkzNzUtYzc2ZTIyOTIxZjVhXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Mary and Max (2009)",
+"img": "https://m.media-amazon.com/images/M/MV5BNzY2Mjc4NjMtNGY4Mi00NzM5LTk3ZTQtN2VkNzVkMzRmM2Y2XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Sherlock Jr. (1924)",
+"img": "https://m.media-amazon.com/images/M/MV5BMjQzM2E2NjYtYmRjMC00ZmVlLTljZTgtNmQ5MGZlNDYyZTc5XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Wages of Fear (1953)",
+"img": "https://m.media-amazon.com/images/M/MV5BMjI3MjU2Mzg2MF5BMl5BanBnXkFtZTgwOTg2MTMzMjE@._V1_UX300_.jpg"
+},
+{
+"text": "The Deer Hunter (1978)",
+"img": "https://m.media-amazon.com/images/M/MV5BZGI4YmVhMzMtMWExMS00MGZiLTg2MmItM2I2MWZjODAyM2U5XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Logan (2017)",
+"img": "https://m.media-amazon.com/images/M/MV5BM2JjODdkMGMtNmY2YS00OGM2LThiY2YtZGYyNzE4Nzc2ODA0XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Pirates of the Caribbean: The Curse of the Black Pearl (2003)",
+"img": "https://m.media-amazon.com/images/M/MV5BNDhlMzEyNzItMTA5Mi00YWRhLThlNTktYTQyMTA0MDIyNDEyXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Rocky (1976)",
+"img": "https://m.media-amazon.com/images/M/MV5BZDEyY2M2MGMtYjg5OC00ZWFjLWFkZDQtNmQzZTdiYmYzZTBkXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The General (1926)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTVhM2Y1MDUtMDkxYi00Y2UxLWI2MTMtZjMzYTY4ODM4MGIzXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Mr. Smith Goes to Washington (1939)",
+"img": "https://m.media-amazon.com/images/M/MV5BMDU4ZjNmMjEtMjcxYi00NDAxLWFlMjQtNWIyNjg5NWUzNTdjXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Tokyo Story (1953)",
+"img": "https://m.media-amazon.com/images/M/MV5BODdkNzcxZjItMDU2Yy00Y2JlLWFkYTQtNzIwM2Q4MWU5MTU2XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "La haine (1995)",
+"img": "https://m.media-amazon.com/images/M/MV5BMThlMDA3NDYtZGM2Zi00NmJhLThlYWItZjViZTkzZWU1ZWRiXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Maharaja (2024)",
+"img": "https://m.media-amazon.com/images/M/MV5BOTFlMTIxOGItZTk0Zi00MTk2LWJiM2UtMzlhZWYzNjQ4N2Y3XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Sound of Music (1965)",
+"img": "https://m.media-amazon.com/images/M/MV5BYWJhYmU4MjQtZDJhYi00ZGVjLTlkNTEtNzkzNGVjOWQ3MjcwXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Spotlight (2015)",
+"img": "https://m.media-amazon.com/images/M/MV5BMjIyOTM5OTIzNV5BMl5BanBnXkFtZTgwMDkzODE2NjE@._V1_UX300_.jpg"
+},
+{
+"text": "Jai Bhim (2021)",
+"img": "https://m.media-amazon.com/images/M/MV5BZjEyNDIzNmEtMjdkYS00ZDAwLTljOWYtNDRhYTVhYTlmOTk1XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Terminator (1984)",
+"img": "https://m.media-amazon.com/images/M/MV5BZmE0YzIxM2QtMGNlMi00MjRmLWE3MWMtOWQzMGVjMmU0YTFmXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Wild Strawberries (1957)",
+"img": "https://m.media-amazon.com/images/M/MV5BNWNiMjQ1M2YtZjQyMi00MmY5LTk3OGUtZDhiMjUxZmJjODE2XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "On the Waterfront (1954)",
+"img": "https://m.media-amazon.com/images/M/MV5BZDJlYTM1ZGYtZTM4YS00MzFhLThiZjktYzQ0ZjAzMGYwZTU3XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Best Years of Our Lives (1946)",
+"img": "https://m.media-amazon.com/images/M/MV5BNTgxMzUyODQtMDJmZC00ZGMyLWI3MzAtZTYwYjBjZjFmMzIxXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Third Man (1949)",
+"img": "https://m.media-amazon.com/images/M/MV5BNGVjMTMxZTQtMmVlNy00YmI0LWJjMDUtYTgyZWU1Njg5ZGRiXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Big Lebowski (1998)",
+"img": "https://m.media-amazon.com/images/M/MV5BY2E3OWQ5OWYtYTRkMC00NjVjLWIzZDQtNmRmM2ZiYTIyYmYxXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Incredibles (2004)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTY5OTU0OTc2NV5BMl5BanBnXkFtZTcwMzU4MDcyMQ@@._V1_UX300_.jpg"
+},
+{
+"text": "Hachi: A Dog's Tale (2009)",
+"img": "https://m.media-amazon.com/images/M/MV5BNTU5NjYyYTgtZGQ3My00MzRhLThjNGYtZmVjN2JjYjhkMjhhXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Before Sunset (2004)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTQ1MjAwNTM5Ml5BMl5BanBnXkFtZTYwNDM0MTc3._V1_UX300_.jpg"
+},
+{
+"text": "The Iron Giant (1999)",
+"img": "https://m.media-amazon.com/images/M/MV5BODM4ZjZjMGEtYmFiMy00MThjLWIzZjUtMDU0ODg1NTI2MzIwXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Exorcist (1973)",
+"img": "https://m.media-amazon.com/images/M/MV5BZjg3YjE4ZjAtYTdmYS00ZTBkLWE1ZjgtNzAzODUwNzRiYjlmXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Room (2015)",
+"img": "https://m.media-amazon.com/images/M/MV5BMjE4NzgzNzEwMl5BMl5BanBnXkFtZTgwMTMzMDE0NjE@._V1_UX300_.jpg"
+},
+{
+"text": "Hotel Rwanda (2004)",
+"img": "https://m.media-amazon.com/images/M/MV5BY2FmMWRmZmQtN2IzMS00OGVmLWFmNjktMTM0YWQzODcwYTEwXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Platoon (1986)",
+"img": "https://m.media-amazon.com/images/M/MV5BZjE4YjllODAtZGMxZS00Mjg2LThkOWUtZjNkMjQ5YThiNDU4XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Seventh Seal (1957)",
+"img": "https://m.media-amazon.com/images/M/MV5BZDlmYTkzOWUtODQ0MS00MmM4LWE3ZjMtYTEwNGUwMmJkYzIxXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Rush (2013)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTZhOGQxM2ItNGQyYy00YzE5LWI5MjMtNmMzNGQzNDE1OTUzXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Stand by Me (1986)",
+"img": "https://m.media-amazon.com/images/M/MV5BNGJkNTUwM2MtZWE2MS00YjNkLWE3MjktNWQwZDQxMDIyZWVmXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Battle of Algiers (1966)",
+"img": "https://m.media-amazon.com/images/M/MV5BMTY2Mjk0OGEtYTM3Yy00ZWZiLWFhNjAtNGExMjEzNGVmMDMxXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Wizard of Oz (1939)",
+"img": "https://m.media-amazon.com/images/M/MV5BNjIwNzAzODc1MF5BMl5BanBnXkFtZTgwNzczMjM5MzE@._V1_UX300_.jpg"
+},
+{
+"text": "My Father and My Son (2005)",
+"img": "https://m.media-amazon.com/images/M/MV5BZDE3MTBkNmQtNGFjMC00YTcwLWExY2ItN2MyMGZkNWJlMmFmXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "The Passion of Joan of Arc (1928)",
+"img": "https://m.media-amazon.com/images/M/MV5BNTE1MDliZjgtYTU2Yy00YjAxLTljYTItNDE2ZGYwYTY1MGQ1XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Drishyam (2015)",
+"img": "https://m.media-amazon.com/images/M/MV5BYjMzZTU0NzUtZGQ0MC00Y2M4LWI5ZDUtZjY1YmNjMjNmNmI3XkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Hera Pheri (2000)",
+"img": "https://m.media-amazon.com/images/M/MV5BNDZmMGEwMjQtNjFlNi00ZGIxLTlkZjItNmU3Mzg4Y2E0ZjUzXkEyXkFqcGc@._V1_UX300_.jpg"
+},
+{
+"text": "Andhadhun (2018)",
+"img": "https://m.media-amazon.com/images/M/MV5BZjc5OWIzOTgtMmM2ZS00ZjZhLTkyZWItMTFjYTc0NWQ4NzhkXkEyXkFqcGc@._V1_UX300_.jpg"
+}
 ]

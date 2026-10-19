@@ -1,44 +1,68 @@
 import { useCallback, useEffect, useState } from 'react'
 import { START_ELO, updateElo } from './elo'
 import { COLLECTIONS, storageKey } from './collections'
+import {
+  answer,
+  choicesLeft,
+  currentPair,
+  isDone,
+  removeFromSession,
+  startSession,
+  totalChoices,
+} from './sortSession'
+import Settings from './Settings'
+import { applyFont, applyTheme, loadFont, loadTheme } from './themes'
 import './App.css'
 
 const defaultCards = (key, items) =>
-  (items ?? []).map((text, i) => ({
+  (items ?? []).map((item, i) => ({
     id: `${key}:${i}`,
-    text,
+    text: item.text,
+    img: item.img,
     elo: START_ELO,
     games: 0,
+    wins: 0,
+    losses: 0,
   }))
 
 function loadCards(key, items) {
   try {
     const parsed = JSON.parse(localStorage.getItem(key))
-    if (Array.isArray(parsed)) return parsed
+    if (Array.isArray(parsed)) {
+      // Premade cards keep their saved ratings, but take text and artwork
+      // from the current data (saved cards may predate or differ from it).
+      const fresh = new Map(defaultCards(key, items).map((c) => [c.id, c]))
+      return parsed.map((c) => ({
+        ...c,
+        text: fresh.get(c.id)?.text ?? c.text,
+        img: fresh.get(c.id)?.img ?? c.img,
+        wins: c.wins ?? 0,
+        losses: c.losses ?? 0,
+      }))
+    }
   } catch {
     /* fall through to defaults */
   }
   return defaultCards(key, items)
 }
 
-// Pick two distinct cards, favouring ones that have been compared least and
-// avoiding an immediate repeat of the previous pairing.
-function pickPair(cards, previous) {
-  const pool = cards.map((c, i) => ({ i, w: 1 / (1 + c.games) }))
-  const draw = (items) => {
-    const total = items.reduce((s, x) => s + x.w, 0)
-    let r = Math.random() * total
-    return items.find((x) => (r -= x.w) < 0) ?? items[items.length - 1]
+const HISTORY_CAP = 500
+
+function loadHistory(key) {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(`${key}:history`))
+    if (Array.isArray(parsed)) return parsed
+  } catch {
+    /* fall through to empty */
   }
-  for (let tries = 0; tries < 10; tries++) {
-    const a = draw(pool)
-    const b = draw(pool.filter((x) => x.i !== a.i))
-    const pair = Math.random() < 0.5 ? [a.i, b.i] : [b.i, a.i]
-    const same =
-      previous && [...pair].sort().join() === [...previous].sort().join()
-    if (!same || cards.length <= 2) return pair
-  }
-  return [0, 1]
+  return []
+}
+
+const record = (c) => `${c.wins ?? 0}W-${c.losses ?? 0}L`
+
+function CardArt({ src, premade }) {
+  if (src) return <img className="art" src={src} alt="" />
+  return premade ? <div className="art blank">?</div> : null
 }
 
 export default function App() {
@@ -60,10 +84,28 @@ export default function App() {
     }
   }
 
+  const [theme, setTheme] = useState(loadTheme)
+  const changeTheme = (id) => {
+    setTheme(id)
+    applyTheme(id)
+  }
+
+  const [font, setFont] = useState(loadFont)
+  const changeFont = (id) => {
+    setFont(id)
+    applyFont(id)
+  }
+
   return (
     <div className="app">
+      <Settings
+        theme={theme}
+        onTheme={changeTheme}
+        font={font}
+        onFont={changeFont}
+      />
       <header>
-        <h1>ELO RANKER</h1>
+        <h1>RANK THINGS</h1>
         <p>&gt; make cards. pick winners. see the ranking_</p>
         <nav className="picker">
           {COLLECTIONS.map((c) => (
@@ -104,8 +146,11 @@ export default function App() {
 function Ranker({ storageKey: key, items, editable }) {
   const [cards, setCards] = useState(() => loadCards(key, items))
   const [text, setText] = useState('')
-  const [ranking, setRanking] = useState(false)
-  const [pair, setPair] = useState(null)
+  const [session, setSession] = useState(null)
+  const [history, setHistory] = useState(() => loadHistory(key))
+  const [showHistory, setShowHistory] = useState(false)
+  // Loser of the latest choice, when that was its first loss.
+  const [firstLoss, setFirstLoss] = useState(null)
 
   useEffect(() => {
     try {
@@ -115,48 +160,86 @@ function Ranker({ storageKey: key, items, editable }) {
     }
   }, [cards, key])
 
+  useEffect(() => {
+    try {
+      localStorage.setItem(`${key}:history`, JSON.stringify(history))
+    } catch {
+      /* storage unavailable */
+    }
+  }, [history, key])
+
   const addCard = (e) => {
     e.preventDefault()
     const t = text.trim()
     if (!t) return
     setCards((cs) => [
       ...cs,
-      { id: crypto.randomUUID(), text: t, elo: START_ELO, games: 0 },
+      { id: crypto.randomUUID(), text: t, elo: START_ELO, games: 0, wins: 0, losses: 0 },
     ])
     setText('')
   }
 
   const removeCard = (id) => setCards((cs) => cs.filter((c) => c.id !== id))
 
-  const removeDuelCard = (id) => {
-    const next = cards.filter((c) => c.id !== id)
-    setCards(next)
-    if (next.length < 2) setRanking(false)
-    else setPair(pickPair(next, null))
-  }
+  // Removing a first-time loser from the banner also undoes that matchup:
+  // the winner gets its previous rating/record back and the history entry goes.
+  const removeFirstLoser = useCallback(() => {
+    const { id, winner } = firstLoss
+    setCards((cs) =>
+      cs.filter((c) => c.id !== id).map((c) => (c.id === winner.id ? winner : c)),
+    )
+    setHistory((h) => h.slice(1))
+    setFirstLoss(null)
+    setSession((s) => (cards.length - 1 < 2 ? null : removeFromSession(s, id)))
+  }, [cards.length, firstLoss])
 
-  const startRanking = () => {
-    setPair(pickPair(cards, null))
-    setRanking(true)
-  }
+  const removeDuelCard = useCallback(
+    (id) => {
+      setFirstLoss(null)
+      const next = cards.filter((c) => c.id !== id)
+      setCards(next)
+      setSession((s) => (next.length < 2 ? null : removeFromSession(s, id)))
+    },
+    [cards],
+  )
+
+  const startRanking = () => setSession(startSession(cards.map((c) => c.id)))
+
+  const ranking = session !== null
+  const finished = ranking && isDone(session)
+  const pair = ranking && !finished ? currentPair(session) : null
 
   const choose = useCallback(
     (side) => {
       if (!pair) return
-      const winner = cards[pair[side]]
-      const loser = cards[pair[1 - side]]
+      const winnerId = pair[side]
+      const loserId = pair[1 - side]
+      const winner = cards.find((c) => c.id === winnerId)
+      const loser = cards.find((c) => c.id === loserId)
       const [w, l] = updateElo(winner.elo, loser.elo)
-      const next = cards.map((c) =>
-        c.id === winner.id
-          ? { ...c, elo: w, games: c.games + 1 }
-          : c.id === loser.id
-            ? { ...c, elo: l, games: c.games + 1 }
-            : c,
+      setCards(
+        cards.map((c) =>
+          c.id === winnerId
+            ? { ...c, elo: w, games: c.games + 1, wins: c.wins + 1 }
+            : c.id === loserId
+              ? { ...c, elo: l, games: c.games + 1, losses: c.losses + 1 }
+              : c,
+        ),
       )
-      setCards(next)
-      setPair(pickPair(next, pair))
+      setHistory((h) =>
+        [
+          { win: winner.text, lose: loser.text, delta: w - winner.elo },
+          ...h,
+        ].slice(0, HISTORY_CAP),
+      )
+      setFirstLoss(
+        (loser.losses ?? 0) === 0 && (loser.wins ?? 0) === 0
+          ? { id: loser.id, text: loser.text, winner }
+          : null,
+      )
+      setSession(answer(session, winnerId))
     },
-    [cards, pair],
+    [cards, pair, session],
   )
 
   useEffect(() => {
@@ -164,38 +247,68 @@ function Ranker({ storageKey: key, items, editable }) {
     const onKey = (e) => {
       if (e.key === 'ArrowLeft') choose(0)
       else if (e.key === 'ArrowRight') choose(1)
-      else if (e.key === 'Escape') setRanking(false)
+      else if (e.key === 'Escape') setSession(null)
+      else if ((e.key === 'r' || e.key === 'R') && firstLoss)
+        removeFirstLoser()
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [ranking, choose])
+  }, [ranking, choose, firstLoss, removeFirstLoser])
 
   // Custom: keep the user's cards, zero their ratings. Premade: restore the
   // full original list at 1000.
-  const reset = () =>
-    editable
-      ? setCards((cs) => cs.map((c) => ({ ...c, elo: START_ELO, games: 0 })))
-      : setCards(defaultCards(key, items))
+  // While ranking, it restarts the session on the fresh cards.
+  const reset = () => {
+    const next = editable
+      ? cards.map((c) => ({ ...c, elo: START_ELO, games: 0, wins: 0, losses: 0 }))
+      : defaultCards(key, items)
+    setCards(next)
+    setHistory([])
+    setFirstLoss(null)
+    setSession(
+      ranking && next.length >= 2 ? startSession(next.map((c) => c.id)) : null,
+    )
+  }
 
   const sorted = [...cards].sort((a, b) => b.elo - a.elo)
-  const canRank = cards.length >= 2
-  const left = ranking && pair ? cards[pair[0]] : null
-  const right = ranking && pair ? cards[pair[1]] : null
+  const byId = new Map(cards.map((c) => [c.id, c]))
+  const duel = pair ? pair.map((id) => byId.get(id)) : null
 
   return (
-      <main>
-        <section className="stage">
-          {ranking && left && right ? (
-            <>
+    <main>
+      <section className="stage">
+        {ranking ? (
+          <>
+            <p className="progress">
+              {finished
+                ? 'Ranking complete.'
+                : `Choices left: up to ${choicesLeft(session)}`}
+            </p>
+            {firstLoss && !finished && (
+              <p className="first-loss">
+                <span>
+                  {firstLoss.text} just lost for the first time. Remove it?
+                </span>
+                <button
+                  className="btn"
+                  onClick={removeFirstLoser}
+                >
+                  Remove (R)
+                </button>
+              </p>
+            )}
+            {duel && (
               <div className="duel">
-                {[left, right].map((c, side) => (
+                {duel.map((c, side) => (
                   <div className="duel-wrap" key={c.id}>
                     <button
                       className="card duel-card"
                       onClick={() => choose(side)}
                     >
+                      <CardArt src={c.img} premade={!editable} />
                       <span className="card-text">{c.text}</span>
                       <span className="elo">{Math.round(c.elo)}</span>
+                      <span className="rec">{record(c)}</span>
                       <span className="key">{side ? '→' : '←'}</span>
                     </button>
                     <button
@@ -208,13 +321,19 @@ function Ranker({ storageKey: key, items, editable }) {
                   </div>
                 ))}
               </div>
-              <button className="btn" onClick={() => setRanking(false)}>
+            )}
+            <div className="actions">
+              <button className="btn" onClick={() => setSession(null)}>
                 Done (Esc)
               </button>
-            </>
-          ) : (
-            <>
-              {editable && (
+              <button className="btn" onClick={reset}>
+                {editable ? 'Reset ELO' : 'Reset all'}
+              </button>
+            </div>
+          </>
+        ) : (
+          <>
+            {editable && (
               <form className="add" onSubmit={addCard}>
                 <input
                   value={text}
@@ -227,62 +346,94 @@ function Ranker({ storageKey: key, items, editable }) {
                   Add
                 </button>
               </form>
-              )}
+            )}
 
-              <div className="cards">
-                {cards.map((c) => (
-                  <div className="card" key={c.id}>
-                    <button
-                      className="remove"
-                      onClick={() => removeCard(c.id)}
-                      aria-label={`Remove ${c.text}`}
-                    >
-                      ×
-                    </button>
-                    <span className="card-text">{c.text}</span>
-                    <span className="elo">{Math.round(c.elo)}</span>
-                  </div>
-                ))}
-                {cards.length === 0 && (
-                  <p className="empty">No cards yet. Add at least two.</p>
-                )}
-              </div>
-
-              <div className="actions">
-                <button
-                  className="btn primary"
-                  onClick={startRanking}
-                  disabled={!canRank}
-                >
-                  Ranking
-                </button>
-                <button
-                  className="btn"
-                  onClick={reset}
-                  disabled={editable && cards.length === 0}
-                >
-                  {editable ? 'Reset ELO' : 'Reset all'}
-                </button>
-              </div>
-            </>
-          )}
-        </section>
-
-        <aside className="board">
-          <h2>LEADERBOARD</h2>
-          {sorted.length === 0 ? (
-            <p className="empty">—</p>
-          ) : (
-            <ol>
-              {sorted.map((c) => (
-                <li key={c.id}>
-                  <span className="name">{c.text}</span>
+            <div className="cards">
+              {cards.map((c) => (
+                <div className="card" key={c.id}>
+                  <button
+                    className="remove"
+                    onClick={() => removeCard(c.id)}
+                    aria-label={`Remove ${c.text}`}
+                  >
+                    ×
+                  </button>
+                  <span className="card-text">{c.text}</span>
                   <span className="elo">{Math.round(c.elo)}</span>
+                  <span className="rec">{record(c)}</span>
+                </div>
+              ))}
+              {cards.length === 0 && (
+                <p className="empty">No cards yet. Add at least two.</p>
+              )}
+            </div>
+
+            <div className="actions">
+              <button
+                className="btn primary"
+                onClick={startRanking}
+                disabled={cards.length < 2}
+              >
+                Ranking
+              </button>
+              <button
+                className="btn"
+                onClick={reset}
+                disabled={editable && cards.length === 0}
+              >
+                {editable ? 'Reset ELO' : 'Reset all'}
+              </button>
+              {cards.length >= 2 && (
+                <span className="hint">
+                  ~{totalChoices(cards.length)} choices to rank {cards.length}
+                </span>
+              )}
+            </div>
+          </>
+        )}
+      </section>
+
+      <aside className="board">
+        <h2>LEADERBOARD</h2>
+        {sorted.length === 0 ? (
+          <p className="empty">—</p>
+        ) : (
+          <ol>
+            {sorted.map((c) => (
+              <li key={c.id}>
+                <span className="name">{c.text}</span>
+                <span className="rec">{record(c)}</span>
+                <span className="elo">{Math.round(c.elo)}</span>
+              </li>
+            ))}
+          </ol>
+        )}
+        <button
+          className="btn tab history-toggle"
+          onClick={() => setShowHistory((v) => !v)}
+          aria-expanded={showHistory}
+        >
+          {showHistory ? 'Hide history' : 'History'}
+        </button>
+        {showHistory &&
+          (history.length === 0 ? (
+            <p className="empty">No choices yet.</p>
+          ) : (
+            <ul className="history">
+              {history.map((h, i) => (
+                <li key={history.length - i}>
+                  <span>
+                    {h.win} <span className="beat">beat</span> {h.lose}
+                  </span>
+                  <span className="elo">
+                    {h.delta >= 0 ? '+' : ''}
+                    {Math.round(h.delta)}
+                  </span>
                 </li>
               ))}
-            </ol>
-          )}
-        </aside>
-      </main>
+            </ul>
+          ))}
+      </aside>
+    </main>
   )
 }

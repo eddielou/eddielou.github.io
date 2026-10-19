@@ -1,14 +1,14 @@
 .app {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 2rem 1.25rem 3rem;
+  padding: 3.5rem 1.25rem 3rem;
 }
 
 header h1 {
   margin: 0;
   letter-spacing: 0.3em;
   font-size: 1.6rem;
-  text-shadow: 0 0 8px rgba(182, 245, 160, 0.5);
+  text-shadow: 0 0 8px var(--glow);
 }
 
 header p {
@@ -172,7 +172,7 @@ input:focus {
 }
 
 .remove:hover {
-  color: #ff7b6b;
+  color: var(--danger);
 }
 
 .actions {
@@ -200,7 +200,7 @@ input:focus {
 }
 
 .duel-card:hover {
-  background: rgba(182, 245, 160, 0.1);
+  background: var(--hover);
   border-color: var(--accent);
   box-shadow: 4px 4px 0 var(--accent);
 }
@@ -268,4 +268,231 @@ header {
 
 .duel-wrap .duel-card {
   flex: 1;
+}
+
+.progress {
+  margin: 0 0 1rem;
+  color: var(--accent);
+}
+
+.hint {
+  align-self: center;
+  margin-left: 0.4rem;
+  color: var(--dim);
+  font-size: 0.85rem;
+}
+
+.actions {
+  flex-wrap: wrap;
+}
+
+/* × lives in a corner hotspot and only shows when that corner is hovered */
+.remove {
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 4px 8px 0 0;
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.1s;
+}
+
+.remove:hover,
+.remove:focus-visible {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .remove {
+    opacity: 0.7;
+  }
+}
+
+.art {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.cards:has(.art) {
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+}
+
+.cards .card:has(.art) {
+  min-height: 0;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.duel-card:has(.art) .art {
+  flex: 1;
+  min-height: 0;
+  aspect-ratio: auto;
+  object-fit: contain;
+  max-height: 340px;
+}
+
+.art.blank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dim);
+  font-size: 2rem;
+}
+
+.rec {
+  color: var(--dim);
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.board li .rec {
+  align-self: center;
+}
+
+.board li .elo {
+  min-width: 2.4rem;
+  text-align: right;
+}
+
+.history-toggle {
+  margin-top: 1rem;
+}
+
+.history {
+  margin: 0.8rem 0 0;
+  padding: 0 4px 0 0;
+  list-style: none;
+  max-height: 40vh;
+  overflow-y: auto;
+  font-size: 0.85rem;
+}
+
+.history li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px dashed var(--line);
+  overflow-wrap: anywhere;
+}
+
+.history .beat {
+  color: var(--dim);
+}
+
+.board .history li::before {
+  content: none;
+}
+
+.first-loss {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1rem;
+  padding: 0.5rem 0.7rem;
+  border: 2px dashed var(--accent);
+  color: var(--accent);
+}
+
+.first-loss span {
+  flex: 1;
+  min-width: 12rem;
+  overflow-wrap: anywhere;
+}
+
+.first-loss .btn {
+  padding: 0.25rem 0.7rem;
+}
+
+.app {
+  position: relative;
+}
+
+.settings {
+  position: absolute;
+  top: 0.9rem;
+  left: 1rem;
+  z-index: 10;
+}
+
+.gear {
+  display: flex;
+  padding: 0.3rem;
+  background: none;
+  border: 2px solid transparent;
+  color: var(--dim);
+  cursor: pointer;
+}
+
+.gear:hover,
+.gear[aria-expanded='true'] {
+  color: var(--fg);
+  border-color: var(--line);
+}
+
+.settings-panel {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  left: 0;
+  width: 260px;
+  padding: 1rem;
+  background: var(--bg);
+  border: 2px solid var(--fg);
+  box-shadow: 4px 4px 0 var(--line);
+}
+
+.settings-panel h2 {
+  margin: 0 0 0.8rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+}
+
+.setting-label {
+  margin: 0 0 0.5rem;
+  color: var(--dim);
+  font-size: 0.8rem;
+}
+
+.theme-opt {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  margin-bottom: 0.4rem;
+  padding: 0.35rem;
+  font: inherit;
+  color: var(--dim);
+  text-align: left;
+  background: none;
+  border: 2px solid var(--line);
+  cursor: pointer;
+}
+
+.theme-opt.on {
+  color: var(--fg);
+  border-color: var(--fg);
+}
+
+.swatch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 1.6rem;
+  border: 1px solid var(--line);
+  font-size: 0.8rem;
+}
+
+.font-label {
+  margin-top: 1rem;
 }

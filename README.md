@@ -1,7 +1,7 @@
 # eddielou.github.io
 
 Personal site built with [React](https://react.dev/) + [Vite](https://vite.dev/).
-ELO Ranker: create text cards, then pick winners between random pairs
+Rank Things: create text cards, then pick winners between random pairs
 (click or ← / → keys). Ratings start at 1000 and update with the standard
 ELO formula (K=32); a leaderboard ranks the cards. Cards persist in
 `localStorage`.

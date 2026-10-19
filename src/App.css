@@ -218,3 +218,54 @@ input:focus {
 .stage > .btn:last-child {
   align-self: flex-start;
 }
+
+.picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.sizes {
+  display: flex;
+  gap: 0.6rem;
+  margin-left: 0.6rem;
+  padding-left: 1.2rem;
+  border-left: 2px solid var(--line);
+}
+
+.btn.tab {
+  padding: 0.35rem 0.8rem;
+  border-color: var(--line);
+  color: var(--dim);
+}
+
+.btn.tab.on {
+  border-color: var(--fg);
+  color: var(--fg);
+  box-shadow: 3px 3px 0 var(--line);
+}
+
+.note {
+  margin: 0.8rem 0 0 !important;
+  font-size: 0.8rem;
+}
+
+header {
+  margin-bottom: 1.5rem;
+}
+
+.cards {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.duel-wrap {
+  position: relative;
+  display: flex;
+}
+
+.duel-wrap .duel-card {
+  flex: 1;
+}

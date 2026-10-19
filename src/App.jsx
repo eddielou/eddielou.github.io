@@ -1,16 +1,24 @@
 import { useCallback, useEffect, useState } from 'react'
 import { START_ELO, updateElo } from './elo'
+import { COLLECTIONS, storageKey } from './collections'
 import './App.css'
 
-const STORAGE_KEY = 'elo-ranker-cards'
+const defaultCards = (key, items) =>
+  (items ?? []).map((text, i) => ({
+    id: `${key}:${i}`,
+    text,
+    elo: START_ELO,
+    games: 0,
+  }))
 
-function loadCards() {
+function loadCards(key, items) {
   try {
-    const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY))
-    return Array.isArray(parsed) ? parsed : []
+    const parsed = JSON.parse(localStorage.getItem(key))
+    if (Array.isArray(parsed)) return parsed
   } catch {
-    return []
+    /* fall through to defaults */
   }
+  return defaultCards(key, items)
 }
 
 // Pick two distinct cards, favouring ones that have been compared least and
@@ -34,18 +42,78 @@ function pickPair(cards, previous) {
 }
 
 export default function App() {
-  const [cards, setCards] = useState(loadCards)
+  const [collectionId, setCollectionId] = useState(
+    () => localStorage.getItem('elo-ranker-collection') ?? 'custom',
+  )
+  const collection =
+    COLLECTIONS.find((c) => c.id === collectionId) ?? COLLECTIONS[0]
+  const [sizes, setSizes] = useState({})
+  const size = sizes[collection.id] ?? collection.sizes?.[0]
+  const key = storageKey(collection, size)
+
+  const pick = (id) => {
+    setCollectionId(id)
+    try {
+      localStorage.setItem('elo-ranker-collection', id)
+    } catch {
+      /* storage unavailable */
+    }
+  }
+
+  return (
+    <div className="app">
+      <header>
+        <h1>ELO RANKER</h1>
+        <p>&gt; make cards. pick winners. see the ranking_</p>
+        <nav className="picker">
+          {COLLECTIONS.map((c) => (
+            <button
+              key={c.id}
+              className={`btn tab${c.id === collection.id ? ' on' : ''}`}
+              onClick={() => pick(c.id)}
+            >
+              {c.label}
+            </button>
+          ))}
+          {collection.sizes && (
+            <span className="sizes">
+              {collection.sizes.map((n) => (
+                <button
+                  key={n}
+                  className={`btn tab${n === size ? ' on' : ''}`}
+                  onClick={() => setSizes((s) => ({ ...s, [collection.id]: n }))}
+                >
+                  Top {n}
+                </button>
+              ))}
+            </span>
+          )}
+        </nav>
+        {collection.note && <p className="note">* {collection.note}</p>}
+      </header>
+      <Ranker
+        key={key}
+        storageKey={key}
+        items={collection.items?.slice(0, size)}
+        editable={!collection.sizes}
+      />
+    </div>
+  )
+}
+
+function Ranker({ storageKey: key, items, editable }) {
+  const [cards, setCards] = useState(() => loadCards(key, items))
   const [text, setText] = useState('')
   const [ranking, setRanking] = useState(false)
   const [pair, setPair] = useState(null)
 
   useEffect(() => {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(cards))
+      localStorage.setItem(key, JSON.stringify(cards))
     } catch {
       /* storage unavailable */
     }
-  }, [cards])
+  }, [cards, key])
 
   const addCard = (e) => {
     e.preventDefault()
@@ -59,6 +127,13 @@ export default function App() {
   }
 
   const removeCard = (id) => setCards((cs) => cs.filter((c) => c.id !== id))
+
+  const removeDuelCard = (id) => {
+    const next = cards.filter((c) => c.id !== id)
+    setCards(next)
+    if (next.length < 2) setRanking(false)
+    else setPair(pickPair(next, null))
+  }
 
   const startRanking = () => {
     setPair(pickPair(cards, null))
@@ -95,8 +170,12 @@ export default function App() {
     return () => window.removeEventListener('keydown', onKey)
   }, [ranking, choose])
 
-  const resetElo = () =>
-    setCards((cs) => cs.map((c) => ({ ...c, elo: START_ELO, games: 0 })))
+  // Custom: keep the user's cards, zero their ratings. Premade: restore the
+  // full original list at 1000.
+  const reset = () =>
+    editable
+      ? setCards((cs) => cs.map((c) => ({ ...c, elo: START_ELO, games: 0 })))
+      : setCards(defaultCards(key, items))
 
   const sorted = [...cards].sort((a, b) => b.elo - a.elo)
   const canRank = cards.length >= 2
@@ -104,27 +183,29 @@ export default function App() {
   const right = ranking && pair ? cards[pair[1]] : null
 
   return (
-    <div className="app">
-      <header>
-        <h1>ELO RANKER</h1>
-        <p>&gt; make cards. pick winners. see the ranking_</p>
-      </header>
-
       <main>
         <section className="stage">
           {ranking && left && right ? (
             <>
               <div className="duel">
                 {[left, right].map((c, side) => (
-                  <button
-                    key={c.id}
-                    className="card duel-card"
-                    onClick={() => choose(side)}
-                  >
-                    <span className="card-text">{c.text}</span>
-                    <span className="elo">{Math.round(c.elo)}</span>
-                    <span className="key">{side ? '→' : '←'}</span>
-                  </button>
+                  <div className="duel-wrap" key={c.id}>
+                    <button
+                      className="card duel-card"
+                      onClick={() => choose(side)}
+                    >
+                      <span className="card-text">{c.text}</span>
+                      <span className="elo">{Math.round(c.elo)}</span>
+                      <span className="key">{side ? '→' : '←'}</span>
+                    </button>
+                    <button
+                      className="remove"
+                      onClick={() => removeDuelCard(c.id)}
+                      aria-label={`Remove ${c.text}`}
+                    >
+                      ×
+                    </button>
+                  </div>
                 ))}
               </div>
               <button className="btn" onClick={() => setRanking(false)}>
@@ -133,6 +214,7 @@ export default function App() {
             </>
           ) : (
             <>
+              {editable && (
               <form className="add" onSubmit={addCard}>
                 <input
                   value={text}
@@ -145,6 +227,7 @@ export default function App() {
                   Add
                 </button>
               </form>
+              )}
 
               <div className="cards">
                 {cards.map((c) => (
@@ -175,10 +258,10 @@ export default function App() {
                 </button>
                 <button
                   className="btn"
-                  onClick={resetElo}
-                  disabled={cards.length === 0}
+                  onClick={reset}
+                  disabled={editable && cards.length === 0}
                 >
-                  Reset ELO
+                  {editable ? 'Reset ELO' : 'Reset all'}
                 </button>
               </div>
             </>
@@ -201,6 +284,5 @@ export default function App() {
           )}
         </aside>
       </main>
-    </div>
   )
 }

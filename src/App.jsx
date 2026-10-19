@@ -11,12 +11,24 @@ import {
   totalChoices,
 } from './sortSession'
 import Settings from './Settings'
+import {
+  beginLogin,
+  completeLoginIfRedirected,
+  isConfigured,
+  isLoggedIn,
+} from './spotify/auth'
+import {
+  AuthExpiredError,
+  clearSpotify,
+  isSaved,
+  loadSavedAlbums,
+} from './spotify/library'
 import { applyFont, applyTheme, loadFont, loadTheme } from './themes'
 import './App.css'
 
 const defaultCards = (key, items) =>
   (items ?? []).map((item, i) => ({
-    id: `${key}:${i}`,
+    id: `${key}:${item.idx ?? i}`,
     text: item.text,
     img: item.img,
     elo: START_ELO,
@@ -84,7 +96,81 @@ export default function App() {
     COLLECTIONS.find((c) => c.id === collectionId) ?? COLLECTIONS[0]
   const [sizes, setSizes] = useState({})
   const size = sizes[collection.id] ?? collection.sizes?.[0]
-  const key = storageKey(collection, size)
+  const filterable = collection.id === 'pitchfork'
+  const [onlySaved, setOnlySaved] = useState(
+    () => localStorage.getItem('rank-things-only-saved') === '1',
+  )
+  const filtering = filterable && onlySaved
+  const key = storageKey(collection, size) + (filtering ? ':saved' : '')
+
+  const [loggedIn, setLoggedIn] = useState(isLoggedIn)
+  const [saved, setSaved] = useState(null) // normalised saved albums
+  const [loadState, setLoadState] = useState({ busy: false, done: 0, total: 0, error: null })
+
+  // Finish a Spotify redirect (?code=...) if we just came back from one.
+  useEffect(() => {
+    completeLoginIfRedirected().then((r) => {
+      if (r.status === 'success') setLoggedIn(true)
+      else if (r.status === 'error')
+        setLoadState((l) => ({ ...l, error: 'Spotify sign-in failed.' }))
+    })
+  }, [])
+
+  const refreshSaved = useCallback((force = false) => {
+    setLoadState({ busy: true, done: 0, total: 0, error: null })
+    loadSavedAlbums({
+      force,
+      onProgress: (done, total) =>
+        setLoadState((l) => ({ ...l, done, total })),
+    })
+      .then((albums) => {
+        setSaved(albums)
+        setLoadState({ busy: false, done: 0, total: 0, error: null })
+      })
+      .catch((err) => {
+        if (err instanceof AuthExpiredError) {
+          clearSpotify()
+          setLoggedIn(false)
+        }
+        setLoadState({
+          busy: false,
+          done: 0,
+          total: 0,
+          error: 'Could not load your Spotify library.',
+        })
+      })
+  }, [])
+
+  useEffect(() => {
+    if (filtering && loggedIn && saved === null && !loadState.busy && !loadState.error)
+      refreshSaved()
+  }, [filtering, loggedIn, saved, loadState, refreshSaved])
+
+  const toggleSaved = () => {
+    const next = !onlySaved
+    setOnlySaved(next)
+    try {
+      localStorage.setItem('rank-things-only-saved', next ? '1' : '0')
+    } catch {
+      /* storage unavailable */
+    }
+  }
+
+  const disconnect = () => {
+    clearSpotify()
+    setLoggedIn(false)
+    setSaved(null)
+  }
+
+  // Top N of the list first, then keep only albums the user has saved.
+  const items = (() => {
+    const top = collection.items?.slice(0, size)
+    if (!filtering || !saved) return top
+    return top
+      .map((it, idx) => ({ ...it, idx }))
+      .filter((it) => isSaved(it.text, saved))
+  })()
+  const awaitingLibrary = filtering && !(loggedIn && saved)
 
   const pick = (id) => {
     setCollectionId(id)
@@ -114,6 +200,12 @@ export default function App() {
         onTheme={changeTheme}
         font={font}
         onFont={changeFont}
+        spotify={{
+          configured: isConfigured(),
+          loggedIn,
+          onConnect: beginLogin,
+          onDisconnect: disconnect,
+        }}
       />
       <header>
         <h1>RANK THINGS</h1>
@@ -141,15 +233,64 @@ export default function App() {
               ))}
             </span>
           )}
+          {filterable && (
+            <button
+              className={`btn tab${onlySaved ? ' on' : ''}`}
+              onClick={toggleSaved}
+              title="Only show albums you have saved songs from on Spotify"
+            >
+              Only my saved
+            </button>
+          )}
         </nav>
         {collection.note && <p className="note">* {collection.note}</p>}
+        {filtering && saved && (
+          <p className="note">
+            * Showing {items.length} of the top {size} albums you have saved
+            songs from on Spotify.{' '}
+            <button className="link" onClick={() => refreshSaved(true)}>
+              Refresh library
+            </button>
+          </p>
+        )}
       </header>
-      <Ranker
-        key={key}
-        storageKey={key}
-        items={collection.items?.slice(0, size)}
-        editable={!collection.sizes}
-      />
+      {awaitingLibrary ? (
+        <section className="stage spotify-gate">
+          {loadState.busy ? (
+            <p>
+              Reading your Spotify library...{' '}
+              {loadState.total > 0 &&
+                `${loadState.done}/${loadState.total} saved songs`}
+            </p>
+          ) : !isConfigured() ? (
+            <p>
+              Spotify isn&apos;t configured. Set <code>VITE_SPOTIFY_CLIENT_ID</code>.
+            </p>
+          ) : !loggedIn ? (
+            <>
+              <p>Connect Spotify to see only albums you have saved songs from.</p>
+              {loadState.error && <p className="err">{loadState.error}</p>}
+              <button className="btn primary" onClick={beginLogin}>
+                Connect Spotify
+              </button>
+            </>
+          ) : (
+            <>
+              <p className="err">{loadState.error}</p>
+              <button className="btn" onClick={() => refreshSaved(true)}>
+                Try again
+              </button>
+            </>
+          )}
+        </section>
+      ) : (
+        <Ranker
+          key={key}
+          storageKey={key}
+          items={items}
+          editable={!collection.sizes}
+        />
+      )}
     </div>
   )
 }

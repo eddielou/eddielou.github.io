@@ -554,3 +554,26 @@ textarea:focus {
   font-size: 0.8rem;
   overflow-wrap: anywhere;
 }
+
+.spotify-gate {
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.spotify-gate p {
+  margin: 0;
+}
+
+.err {
+  color: var(--danger);
+}
+
+.link {
+  padding: 0;
+  font: inherit;
+  color: var(--accent);
+  background: none;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
